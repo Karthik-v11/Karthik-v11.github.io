@@ -38,9 +38,20 @@ window.ontouchmove = (e) => editCursor(e.touches[0]);
 document.addEventListener("mousemove", editCursor);
 
 window.onload = () => {
-  document.getElementsByClassName("loading-overlay")[0].style.display = "flex";
-  setTimeout(showPage, 3000);
+  if(!detectMob()){
+    document.getElementsByClassName("loading-overlay")[0].style.display = "flex";
+    setTimeout(showPage, 800);
+  }
 };
+
+function detectMob() {
+  console.log(window.innerWidth);
+  if( window.innerWidth <= 800){
+    return true;
+  }else{
+    return false;
+  };
+}
 
 function showPage() {
   const elements = document.getElementsByClassName("locomotive-scroll");
