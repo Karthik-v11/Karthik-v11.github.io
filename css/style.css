@@ -5264,7 +5264,7 @@ label {
   }
 
   .project-card {
-    grid-row-gap: 48px;
+    grid-row-gap: 24px;
     padding-top: 26px;
     padding-left: 24px;
     padding-right: 24px;

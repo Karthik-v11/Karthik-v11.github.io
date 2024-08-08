@@ -171,7 +171,7 @@ body {
 
   .container-banner {
     z-index: 3;
-    width: 882px;
+    width: 99vw;
     grid-row-gap: 32px;
     flex-direction: column;
     align-items: stretch;
@@ -194,6 +194,8 @@ body {
   }
 
   .text-hero.project-title {
+
+    text-align: center;
     background-image: linear-gradient(
       to bottom,
       var(--on-background) 50%,
@@ -221,9 +223,8 @@ body {
 
   .contact-links {
     display: flex;
-    justify-content: space-around;
     position: relative;
-    gap: 3rem;
+    gap: 2rem;
     transition: all 1s ease;
   }
   
@@ -317,6 +318,7 @@ body {
   
   .overview-text-wrapper {
     width: 60vw;
+    text-align: justify;
     grid-row-gap: 8px;
     flex-direction: column;
     display: flex;
@@ -647,6 +649,8 @@ body {
         align-items: flex-start;
         padding: 24px 16px;
       }
+      .overview-text-wrapper {
+        width: 80vw;}
 
       
   .divider-wrapper>img{
