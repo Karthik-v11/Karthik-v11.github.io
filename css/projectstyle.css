@@ -138,7 +138,7 @@ a{
 }
 
 .section-banner.tpm {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   background-image: radial-gradient(
     circle farthest-side at 50% 0,
     rgba(0, 106, 195, 0.6),
