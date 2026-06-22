@@ -20,16 +20,6 @@
 
   <!-- Hide Scrollbar -->
   <style>
-    remove body {
-      -ms-overflow-style: none;
-    }
-
-    body :-webkit-scrollbar {
-      display: none;
-    }
-  </style>
-  <!-- Element Pointer Events -->
-  <style>
     body {
       -ms-overflow-style: none;
       overflow: -moz-scrollbars-none;
@@ -47,14 +37,20 @@
       right: 6px;
       left: auto;
     }
+
+    @media screen and (min-width: 801px) {
+      .loading-overlay { display: flex !important; }
+      .locomotive-scroll { opacity: 0 !important; }
+    }
+    .hide { opacity: 0 !important; pointer-events: none !important; }
+    .locomotive-scroll.reveal { opacity: 1 !important; animation: .8s cubic-bezier(.22,1,.36,1) fadeIn; }
   </style>
 
 </head>
 
 <body class="body">
-  <div class="cursor-cover">
-    <div class="cursor"></div>
-  </div>
+  <div class="cursor"></div>
+  <div class="cursor-trail"></div>
   <!-- <div style="display:flex;opacity:1" class="loading-overlay">
             <img src="https:../../assets-global.../assets/hightlight.svg.com/63dcb6e1a80e9454b630f4c4/645df90657e6ec4e4ed2e236_loading-dots.gif" loading="lazy" alt="" class="logo-loading"/>
             <div class="text-loading">Just a moment.</div>
