@@ -123,7 +123,7 @@ class Cursor {
 
   bindInteractive() {
     const targets = document.querySelectorAll(
-      ".project-card-outline, .project-card, a, button, .skill-card, .experience-card, .link-pill, .nav-toggle, .resume-btn, .contact-icons, .hover-this, .chip-socials"
+      ".project-card-outline, .project-card, a, button, .skill-card, .experience-card, .link-pill, .nav-toggle, .resume-btn, .nav-resume-btn, .hero-cta-btn, .contact-icons, .hover-this, .chip-socials"
     )
     targets.forEach(el => {
       el.addEventListener("mouseenter", () => {

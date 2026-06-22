@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Karthik - Work</title>
-  <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     content="I craft Digital Experiences. Software Developer based in Bangalore,India. Builds Web and Mobile apps"
     name="description">
@@ -25,24 +25,20 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link async href="css/style.css" rel="stylesheet" />
   <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900%7CAlbert+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic%7CRoboto+Mono:100,200,300,regular,500,600,700%7CJetBrains+Mono:100,200,300,regular,500,600,700,800%7CGloock:regular" media="all">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900%7CAlbert+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic%7CRoboto+Mono:100,200,300,regular,500,600,700%7CJetBrains+Mono:100,200,300,regular,500,600,700,800%7CGloock:regular%7CPlayfair+Display:500italic,600italic,700italic" media="all">
   <style>
     body,
     html {
       margin: 0;
       padding: 0;
-      height: 100%;
     }
-
     body {
       -ms-overflow-style: none;
       overflow: -moz-scrollbars-none;
     }
-
     body::-webkit-scrollbar {
       display: none;
     }
-
     @media screen and (min-width: 801px) {
       .loading-overlay { display: flex !important; }
       .locomotive-scroll { opacity: 0 !important; }
@@ -55,10 +51,6 @@
 <body class="body">
   <div class="cursor"></div>
   <div class="cursor-trail"></div>
-  <div class="loading-overlay">
-    <img src="assets/loading-dots.gif" alt="loading gif" class="logo-loading" />
-    <div class="text-loading">Just a moment.</div>
-  </div>
   <div class="swipe-indicator-wrapper">
     <div class="text-swipe-to-see-work">SWIPE TO</div>
     <img src="assets/icon-swipe-up.svg" alt="swipe icon" class="icon-hero-swipe" />
@@ -71,7 +63,7 @@
           <img src="assets/logo.webp" alt="logo" class="logomark" />
           <div class="logo-text">
             <div class="text-logo">Karthik V</div>
-            <div class="text-underlogo">Developer</div>
+            <div class="text-underlogo">Flutter Engineer</div>
           </div>
         </div>
       </div>
@@ -140,9 +132,10 @@
         <div class="text-socialnav link-pill" id="link-btn">Close</div>
       </div>
       <div class="nav-right-wrapper">
-        <div class="chip-socials-wrapper">
-          <div class="text-socialnav link-pill" id="links-btn">Links</div>
-        </div>
+          <div class="chip-socials-wrapper">
+            <div class="text-socialnav link-pill" id="links-btn">Links</div>
+            <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" class="nav-resume-btn">Resume</a>
+          </div>
       </div>
     </div>
   </div>
@@ -157,22 +150,28 @@
         </div>
         <div class="container-hero-image">
           <div class="glare-item-top outer-edge"></div>
-          <div class="window-main">
-            <div class="window-content">
-              <div class="hero-text-content">
-                <div class="text-hero">
-                  <div class="text-hero-serif">I craft Digital Experiences</div>
-                  <div class="text-projectcard-title">
-                    Hi, I am Karthik. I'm a software engineer based in
-                    Bangalore, IN <br />
-                    specializing in building (and occasionally designing)
-                    exceptional <br />
-                    mobile and web applications.
+          <div class="window-outline">
+            <div class="glare-item-top hero-inner"></div>
+            <div class="window-main">
+              <div class="window-content">
+                  <div class="hero-text-content">
+                    <div class="hero-heading">
+                                        <div class="text-hero-serif">I craft Digital Experiences</div>
+
+                    </div>
+                    <div class="text-projectcard-title">
+                      Hi, I'm Karthik — a <span class="highlight">Flutter engineer</span> based in Bengaluru, India. I specialize in building <span class="highlight">exceptional mobile &amp; web apps</span>, real-time systems, and clean architectures.
+                    </div>
+                    <div class="hero-cta-wrapper">
+                      <a href="mailto:karthikv2910@gmail.com" class="hero-cta-btn">
+                        Let's work together
+                        <span class="hero-cta-arrow">↗</span>
+                      </a>
+                    </div>
+                    <div class="hero-about-grid"></div>
                   </div>
-                </div>
-                <div class="hero-about-grid"></div>
+                <div class="window-grain"></div>
               </div>
-              <div class="window-grain"></div>
             </div>
           </div>
         </div>
@@ -183,14 +182,33 @@
         <div class="hero-portrait-main">
           <div class="hero-portrait-top">
             <div class="text-hero portrait">
-              <span class="text-hero-serif">I craft Digital Experiences</span>
-              <div class="text-projectcard-title">
-                Hi, I am Karthik. I'm a software engineer based in Bangalore, IN
-                <br />
-                specializing in building (and occasionally designing)
-                exceptional <br />
-                mobile and web applications.
+              <div class="hero-heading" style="text-align:left;align-items:flex-start;">
+                <div class="hero-heading-row">
+                  <strong>I'm</strong>
+                  <strong>Karthik,</strong>
+                  <strong>a</strong>
+                  <span class="hero-italic">senior Flutter</span>
+                  <strong class="hero-accent">engineer</strong>
+                </div>
+                <div class="hero-heading-row">
+                  <span class="hero-and">and</span>
+                </div>
+                <div class="hero-heading-row">
+                  <strong>I</strong>
+                  <strong>ship</strong>
+                  <strong class="hero-accent">products</strong>
+                </div>
               </div>
+              <div class="text-projectcard-title" style="text-align:left;">
+                Hi, I am Karthik. I'm a Flutter engineer based in Bangalore, IN
+                — 6+ live apps on the App Store &amp; Play Store, 8+ enterprise projects, and real-time systems handling 1000+ concurrent WebSocket streams.
+              </div>
+            </div>
+            <div class="hero-cta-wrapper" style="justify-content:flex-start;padding:0 8px;">
+              <a href="mailto:karthikv2910@gmail.com" class="hero-cta-btn">
+                Let's work together
+                <span class="hero-cta-arrow">↗</span>
+              </a>
             </div>
           </div>
         </div>
@@ -280,9 +298,51 @@
             <div class="section-projects">
 
             <div class="container-projects">
+              <div class="text-projectpage-subheading">Mobile Projects</div>
+              <div class="projects-list">
+                <a href="html/amgmiotproject.html" class="project-card AMGIOT up-slider w-inline-block">
+                  <div class="project-card-image">
+                    <img src="assets/project-images/amgmiot.webp" alt="amgmiot project" class="project-thumbnail" />
+                  </div>
+                  <div class="project-card-body">
+                    <div class="projectcard-title-row">
+                      <div class="text-projectcard-title">AMG-mIoT</div>
+                      <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
+                    </div>
+                    <div class="text-projectcard-description">Empower decisions with real-time machine data: visualize, analyze, and optimize.</div>
+                    <span class="project-metric">2,000+ active industrial users · App Store &amp; Play Store</span>
+                    <div class="project-card-tags">
+                      <span class="project-card-tag">Flutter</span>
+                      <span class="project-card-tag">Blazor</span>
+                      <span class="project-card-tag">C#</span>
+                    </div>
+                  </div>
+                </a>
+                <a href="html/mvp2project.html" class="project-card MVP2 up-slider w-inline-block">
+                  <div class="project-card-image">
+                    <img src="assets/project-images/mvp2.jpg" alt="mvp2 project" class="project-thumbnail" />
+                  </div>
+                  <div class="project-card-body">
+                    <div class="projectcard-title-row">
+                      <div class="text-projectcard-title">mIoT CNC MVP 2</div>
+                      <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
+                    </div>
+                    <div class="text-projectcard-description">Scalable CNC monitoring platform with expanded data points and modular architecture.</div>
+                    <span class="project-metric">Scalable CNC monitoring · modular architecture</span>
+                    <div class="project-card-tags">
+                      <span class="project-card-tag">Flutter</span>
+                      <span class="project-card-tag">Dart</span>
+                      <span class="project-card-tag">ASP.NET Core API</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="container-projects">
               <div class="text-projectpage-subheading">Web3D Projects</div>
               <div class="projects-list">
-                <a href="html/imtexproject.html" class="project-card IMTEX left-sliders w-inline-block">
+                <a href="html/imtexproject.html" class="project-card IMTEX up-slider w-inline-block">
                   <div class="project-card-image">
                     <img src="assets/project-images/amgmiot.webp" alt="AMG IoT project showcase" class="project-thumbnail" />
                   </div>
@@ -292,6 +352,7 @@
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
                     <div class="text-projectcard-description">A futuristic 3D virtual showroom featuring over 30 interactive machine models.</div>
+                    <span class="project-metric">30+ interactive machines · 5,000+ visitors at IMTEX 2025</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Next.js 14</span>
                       <span class="project-card-tag">Three.js</span>
@@ -299,7 +360,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="html/danfossproject.html" class="project-card DANFOSS right-sliders w-inline-block">
+                <a href="html/danfossproject.html" class="project-card DANFOSS up-slider w-inline-block">
                   <div class="project-card-image">
                     <img src="assets/project-images/danfoss.png" alt="danfoss project" class="project-thumbnail" />
                   </div>
@@ -309,6 +370,7 @@
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
                     <div class="text-projectcard-description">Real-time mission-critical assembly management with SignalR interlocks and Takt-time tracking.</div>
+                    <span class="project-metric">Mission-critical · live in production at Danfoss</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Blazor Server</span>
                       <span class="project-card-tag">SignalR</span>
@@ -322,7 +384,7 @@
             <div class="container-projects">
               <div class="text-projectpage-subheading">Web Projects</div>
               <div class="projects-list">
-                <a href="html/qsureproject.html" class="project-card QSURE left-sliders w-inline-block">
+                <a href="html/qsureproject.html" class="project-card QSURE up-slider w-inline-block">
                   <div class="project-card-image">
                     <img src="assets/project-images/qsure.png" alt="qsure project" class="project-thumbnail" />
                   </div>
@@ -332,6 +394,7 @@
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
                     <div class="text-projectcard-description">Quality Assurance suite for field inspections and precision mechanical testing.</div>
+                    <span class="project-metric">Field-deployed quality assurance · Firebase-powered</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Flutter</span>
                       <span class="project-card-tag">Dart</span>
@@ -339,7 +402,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="html/cdcproject.html" class="project-card CDC right-sliders w-inline-block">
+                <a href="html/cdcproject.html" class="project-card CDC up-slider w-inline-block">
                   <div class="project-card-image">
                     <img src="assets/project-images/cdc.png" alt="cdc project" class="project-thumbnail" />
                   </div>
@@ -349,50 +412,11 @@
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
                     <div class="text-projectcard-description">Industrial packing solution with Zebra hardware integration for QR lifecycle management.</div>
+                    <span class="project-metric">Zebra hardware integrated · live in warehouse operations</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Blazor Web</span>
                       <span class="project-card-tag">Flutter Mobile</span>
                       <span class="project-card-tag">Zebra ZSDK</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="container-projects">
-              <div class="text-projectpage-subheading">Mobile Projects</div>
-              <div class="projects-list">
-                <a href="html/mvp2project.html" class="project-card MVP2 left-sliders w-inline-block">
-                  <div class="project-card-image">
-                    <img src="assets/project-images/mvp2.jpg" alt="mvp2 project" class="project-thumbnail" />
-                  </div>
-                  <div class="project-card-body">
-                    <div class="projectcard-title-row">
-                      <div class="text-projectcard-title">mIoT CNC MVP 2</div>
-                      <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
-                    </div>
-                    <div class="text-projectcard-description">Scalable CNC monitoring platform with expanded data points and modular architecture.</div>
-                    <div class="project-card-tags">
-                      <span class="project-card-tag">Flutter</span>
-                      <span class="project-card-tag">Dart</span>
-                      <span class="project-card-tag">ASP.NET Core API</span>
-                    </div>
-                  </div>
-                </a>
-                <a href="html/amgmiotproject.html" class="project-card AMGIOT right-sliders w-inline-block">
-                  <div class="project-card-image">
-                    <img src="assets/project-images/amgmiot.webp" alt="amgmiot project" class="project-thumbnail" />
-                  </div>
-                  <div class="project-card-body">
-                    <div class="projectcard-title-row">
-                      <div class="text-projectcard-title">AMG-mIoT</div>
-                      <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
-                    </div>
-                    <div class="text-projectcard-description">Empower decisions with real-time machine data: visualize, analyze, and optimize.</div>
-                    <div class="project-card-tags">
-                      <span class="project-card-tag">Flutter</span>
-                      <span class="project-card-tag">Blazor</span>
-                      <span class="project-card-tag">C#</span>
                     </div>
                   </div>
                 </a>
@@ -421,16 +445,18 @@
               <div class="text-projectpage-heading info-experience">AceMicromatic MIT</div>
               <div class="text-projectpage-subheading info">Software Engineer</div>
               <div class="text-info-meta">August &#x27;23 - Present</div>
-              <div class="text-projectpage-body info">Built multiple cross-platform mobile apps which showcased the core
-                product of AmiT. Created robust mobile and web applications, alongside designing and implementing
-                seamless APIs. Successfully led multiple projects, ensuring timely delivery and alignment with business
-                goals. Collaborated closely with customers to understand their needs and translated them into functional
-                solutions, often creating intuitive UI designs to enhance user experience </div>
+              <div class="exp-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Bengaluru, India
+              </div>
+              <div class="text-projectpage-body info">Built cross-platform mobile &amp; web apps showcasing AmiT's core IIoT product. Led full project lifecycle — from architecting Clean Architecture in Flutter to deploying Blazor dashboards with SignalR real-time updates. Worked directly with customers to translate requirements into polished UIs and reliable APIs.</div>
               <div class="text-projectpage-body" style="display: flex;">
                 <div class="chip-socials-wrapper">
                   <div class="text-socialnav link-pill">Flutter</div>
                   <div class="text-socialnav link-pill">Blazor</div>
                   <div class="text-socialnav link-pill">C#</div>
+                  <div class="text-socialnav link-pill">SignalR</div>
+                  <div class="text-socialnav link-pill">ASP.NET Core</div>
                 </div>
               </div>
             </div>
@@ -438,14 +464,16 @@
               <div class="text-projectpage-heading info-experience">Xtendr</div>
               <div class="text-projectpage-subheading info">AR Engineer Intern</div>
               <div class="text-info-meta">January &#x27;23 - May &#x27;23</div>
-              <div class="text-projectpage-body info">Developed AR Experiences to gamify user experiences. optimized
-                performance for various platforms, and conducted extensive testing to ensure a seamless user experience.
-                Additionally, Contributed to innovative projects by integrating cutting-edge AR technologies and tools.
+              <div class="exp-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Remote
               </div>
+              <div class="text-projectpage-body info">Built AR experiences to gamify user engagement using Three.js and 8th Wall. Optimized performance across mobile platforms and contributed to innovative WebAR campaigns.</div>
               <div class="text-projectpage-body">
                 <div class="chip-socials-wrapper">
                   <div class="text-socialnav link-pill">Three.js</div>
-                  <div class="text-socialnav link-pill">8th wall</div>
+                  <div class="text-socialnav link-pill">8th Wall</div>
+                  <div class="text-socialnav link-pill">WebAR</div>
                 </div>
               </div>
             </div>
@@ -453,8 +481,11 @@
               <div class="text-projectpage-heading info-experience">BrioBrill Technologies</div>
               <div class="text-projectpage-subheading info">Full Stack Developer Intern</div>
               <div class="text-info-meta">January &#x27;22 - December &#x27;22</div>
-              <div class="text-projectpage-body info">Developed and Collaborated with the team to develop a platform to
-                create dynamic AR experiences. Also built a high-quality, robust MVP for a mobile app.</div>
+              <div class="exp-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Bengaluru, India
+              </div>
+              <div class="text-projectpage-body info">Collaborated on a platform for creating dynamic AR experiences. Built a robust mobile app MVP using Flutter and contributed to the MERN stack backend.</div>
               <div class="text-projectpage-body">
                 <div class="chip-socials-wrapper">
                   <div class="text-socialnav link-pill">Three.js</div>
@@ -476,10 +507,8 @@
         <div class="info-content connect">
           <div class="hero-text-content">
             <div class="text-hero">
-              <div class="text-projectpage-heading">Looking for a new addition to your team?</div>
-              <div class="text-projectpage-body info">I am currently available to join a team or
-                company.<br>Additionally, I am looking for collaborations to develop apps and develop my expertise in
-                web and mobile development. Feel free to contact me for any questions or to simply say hi.</div>
+              <div class="text-projectpage-heading">Let's build something worth shipping.</div>
+              <div class="connect-text">I'm open to <span class="highlight">full-time Flutter engineer</span> roles. I own the full cycle — <span class="highlight">Clean Architecture</span>, <span class="highlight">CI/CD automation</span>, and <span class="highlight">App Store &amp; Play Store</span> release. If you're building something ambitious, let's talk.</div>
             </div>
           </div>
           <div class="resume-div">
