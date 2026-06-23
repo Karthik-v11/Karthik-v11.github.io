@@ -159,6 +159,12 @@ class Cursor {
 
 const cursor = new Cursor()
 
+// Strip cursor lock listeners from timeline sidebar anchors & contact-icons (project pages)
+document.querySelectorAll('.timeline-item, .contact-icons').forEach(el => {
+  const clone = el.cloneNode(true)
+  el.parentNode?.replaceChild(clone, el)
+})
+
 window.onload = () => {
   if (!detectMob()) {
     setTimeout(showPage, 600)
@@ -172,7 +178,15 @@ function detectMob() {
 function showPage() {
   const scroll = document.querySelector(".locomotive-scroll")
   const loadingOverlay = document.querySelector(".loading-overlay")
-  if (scroll) scroll.classList.add("reveal")
+  if (scroll) {
+    scroll.classList.add("reveal")
+    const hero = scroll.querySelector(".section-hero")
+    if (hero) hero.classList.add("fade-in")
+    const heroPortrait = scroll.querySelector(".section-hero-portrait")
+    if (heroPortrait) heroPortrait.classList.add("fade-in")
+    const infoHero = scroll.querySelector(".section-info-hero")
+    if (infoHero) infoHero.classList.add("fade-in")
+  }
   if (loadingOverlay) {
     loadingOverlay.classList.add("hide")
     setTimeout(() => {

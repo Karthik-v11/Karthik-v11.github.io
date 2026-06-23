@@ -129,7 +129,7 @@ body,
 /* === SECTION LABEL === */
 .text-projectpage-overline {
   color: var(--text-body);
-  font-size: 12px;
+  font-size: 1.2rem;
   font-family: JetBrains Mono, monospace;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -178,7 +178,6 @@ body,
   font-size: clamp(1rem, 1vw, 1.1rem);
   font-weight: 400;
   line-height: 1.8;
-  max-width: 700px;
 }
 
 .text-projectpage-body.info {
@@ -433,7 +432,26 @@ body,
 }
 
 .nav-indicator-glow {
-  display: none;
+  width: 24px;
+  height: 4px;
+  background-color: var(--on-background);
+  border-radius: 2px;
+  margin-bottom: -2px;
+  margin-left: 33px;
+  box-shadow: 0 2px 25px 2px #fff;
+  transition: margin-left 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-indicator-glow.info {
+  margin-left: 112px;
+}
+
+.pill-change {
+  margin-left: 112px;
+}
+
+.nav-indicator-glow.info-pill-change {
+  margin-left: 33px;
 }
 
 /* Links button */
@@ -515,9 +533,10 @@ body,
 
 .links-container {
   background: rgba(255, 255, 255, 0.03);
-  padding: 2rem;
+  padding: 2rem 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
+  width: min(90vw, 800px);
 }
 
 .link-chip-container {
@@ -538,6 +557,19 @@ body,
 .link-chip-container:hover {
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.12);
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.links-grid .link-chip-container {
+  width: 100%;
+  margin: 0;
+  justify-content: center;
 }
 
 /* === SWIPE INDICATOR === */
@@ -1014,8 +1046,8 @@ body,
 }
 
 .experience-card {
-  padding: 32px;
-  margin-bottom: 24px;
+  padding: 20px;
+  margin-bottom: 16px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
@@ -1035,20 +1067,22 @@ body,
 }
 
 .experience-card .text-projectpage-heading.info-experience {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .experience-card .text-projectpage-subheading.info {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .experience-card .text-info-meta {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   display: block;
 }
 
 .experience-card .text-projectpage-body {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+  font-size: clamp(0.85rem, 0.9vw, 0.95rem);
+  line-height: 1.5;
 }
 
 .experience-card .chip-socials-wrapper {
@@ -1106,15 +1140,15 @@ body,
 
 /* === NAV RESUME BUTTON === */
 .nav-resume-btn {
-  height: 36px;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 16px;
-  background: rgba(255, 255, 255, 0.06);
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  font-size: 13px;
+  border-radius: 22px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--on-background);
   text-decoration: none;
@@ -1124,8 +1158,8 @@ body,
 }
 
 .nav-resume-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 /* === HERO HEADING MIXED FONTS === */
@@ -1621,6 +1655,22 @@ body,
   }
 }
 
+/* Page load fade-in */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: 1s cubic-bezier(0.22, 1, 0.36, 1) fadeInUp;
+}
+
 /* Scroll animation classes */
 .up-slider {
   opacity: 0;
@@ -1667,7 +1717,7 @@ body,
 }
 
 .cursor.is-locked {
-  border: 1.5px solid rgba(242, 242, 242, 0.8);
+  /* border: 1.5px solid rgba(242, 242, 242, 0.8); */
   background: transparent;
   transition: width 0.2s cubic-bezier(0.22, 1, 0.36, 1),
               height 0.2s cubic-bezier(0.22, 1, 0.36, 1),
@@ -1705,15 +1755,15 @@ body,
   }
 
   .section-general {
-    padding: 180px 64px;
+    padding: 120px 64px;
   }
 
   .section-general.info {
-    padding: 80px 64px 180px;
+    padding: 90px 64px 120px;
   }
 
   .container-info,
-  .container-projects {
+  .container-projects { 
     max-width: 1200px;
   }
 
