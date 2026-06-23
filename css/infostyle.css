@@ -736,7 +736,7 @@ span {
 
 .footer-top-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 48px;
 }
@@ -782,13 +782,18 @@ span {
   color: var(--on-background);
   align-items: center;
   text-decoration: none;
-  padding: 4px 0;
-  transition: opacity 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
   opacity: 0.7;
 }
 
 .footer-link:hover {
   opacity: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .text-footer-link {
@@ -808,6 +813,54 @@ span {
   transform: rotate(45deg);
   width: 20px;
   opacity: 0.5;
+}
+
+/* === CONTACT ICONS (matching index.html) === */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.contact-icons {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  color: var(--on-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease,
+              background 0.3s ease;
+  will-change: transform;
+}
+
+.contact-icons:hover {
+  transform: translateY(-6px) scale(1.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-icons svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media screen and (max-width: 767px) {
+  .contact-links {
+    gap: 16px;
+  }
+  .contact-icons {
+    padding: 12px;
+  }
+  .contact-icons svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .text-footer-copyright {

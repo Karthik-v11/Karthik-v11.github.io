@@ -1390,13 +1390,18 @@ body,
   color: var(--on-background);
   align-items: center;
   text-decoration: none;
-  padding: 4px 0;
-  transition: opacity 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
   opacity: 0.7;
 }
 
 .footer-link:hover {
   opacity: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .text-footer-link {
