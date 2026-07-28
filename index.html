@@ -305,14 +305,23 @@
       </div>
       <div class="section-general info">
         <div class="container-info info-content">
-          <div class="overline-wrapper">
-            <div class="text-projectpage-overline">MY PROJECTS</div>
-          </div>
           <div class="info-content-wrapper">
-            <div class="section-projects">
-
-            <div class="container-projects">
-              <div class="text-projectpage-subheading">Mobile Projects</div>
+            <div class="projects-shell">
+              <div class="project-shell-header">
+                <div class="text-projectpage-overline">PROJECTS I GEEK OUT ON</div>
+                <div class="project-intro">
+                  <div class="project-intro-heading">A few builds I keep coming back to.</div>
+                  <div class="project-intro-body">
+                    These are the apps, dashboards, and experiments that taught me the most, solved real problems for real people, and
+                    still make me smile when I open them.
+                  </div>
+                  <div class="project-intro-pills">
+                    <span class="project-intro-pill">Tap a card to peek inside</span>
+                    <span class="project-intro-pill">Built with real users in mind</span>
+                    <span class="project-intro-pill">A little serious, a little playful</span>
+                  </div>
+                </div>
+              </div>
               <div class="projects-list">
                 <a href="html/amgmiotproject.html" class="project-card AMGIOT up-slider w-inline-block">
                   <div class="project-card-image">
@@ -323,8 +332,8 @@
                       <div class="text-projectcard-title">AMG-mIoT</div>
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
-                    <div class="text-projectcard-description">Empower decisions with real-time machine data: visualize, analyze, and optimize.</div>
-                    <span class="project-metric">2,000+ active industrial users · App Store &amp; Play Store</span>
+                    <div class="text-projectcard-description">A live machine-data companion that helps teams see what is happening, spot issues faster, and keep things moving.</div>
+                    <span class="project-metric">Used by 2,000+ industrial users across App Store &amp; Play Store</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Flutter</span>
                       <span class="project-card-tag">Blazor</span>
@@ -341,8 +350,8 @@
                       <div class="text-projectcard-title">mIoT CNC MVP 2</div>
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
-                    <div class="text-projectcard-description">Scalable CNC monitoring platform with expanded data points and modular architecture.</div>
-                    <span class="project-metric">Scalable CNC monitoring · modular architecture</span>
+                    <div class="text-projectcard-description">The upgraded version of the CNC monitor, built to scale cleanly and keep the dashboard feeling quick and calm.</div>
+                    <span class="project-metric">Built to scale without making the dashboard feel noisy</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Flutter</span>
                       <span class="project-card-tag">Dart</span>
@@ -350,12 +359,6 @@
                     </div>
                   </div>
                 </a>
-              </div>
-            </div>
-
-            <div class="container-projects">
-              <div class="text-projectpage-subheading">Web3D Projects</div>
-              <div class="projects-list">
                 <a href="html/imtexproject.html" class="project-card IMTEX up-slider w-inline-block">
                   <div class="project-card-image">
                     <img src="assets/project-images/amgmiot.webp" alt="AMG IoT project showcase" class="project-thumbnail" />
@@ -365,8 +368,8 @@
                       <div class="text-projectcard-title">IMTEX 2025 WebVR</div>
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
-                    <div class="text-projectcard-description">A futuristic 3D virtual showroom featuring over 30 interactive machine models.</div>
-                    <span class="project-metric">30+ interactive machines · 5,000+ visitors at IMTEX 2025</span>
+                    <div class="text-projectcard-description">A playful WebVR showroom with 30+ machine models you can explore like you are wandering the expo floor from your browser.</div>
+                    <span class="project-metric">A browser-based expo walk-through for 5,000+ visitors at IMTEX 2025</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Next.js 14</span>
                       <span class="project-card-tag">Three.js</span>
@@ -380,11 +383,11 @@
                   </div>
                   <div class="project-card-body">
                     <div class="projectcard-title-row">
-                      <div class="text-projectcard-title">Danfoss Assembly</div>
+                      <div class="text-projectcard-title">Assembly Automation</div>
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
-                    <div class="text-projectcard-description">Real-time mission-critical assembly management with SignalR interlocks and Takt-time tracking.</div>
-                    <span class="project-metric">Mission-critical · live in production at Danfoss</span>
+                    <div class="text-projectcard-description">A production assembly workflow that keeps teams in sync with live updates, alerts, and the kind of visibility people actually trust.</div>
+                    <span class="project-metric">A live production system trusted on the shop floor</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Blazor Server</span>
                       <span class="project-card-tag">SignalR</span>
@@ -392,12 +395,6 @@
                     </div>
                   </div>
                 </a>
-              </div>
-            </div>
-
-            <div class="container-projects">
-              <div class="text-projectpage-subheading">Web Projects</div>
-              <div class="projects-list">
                 <a href="html/qsureproject.html" class="project-card QSURE up-slider w-inline-block">
                   <div class="project-card-image">
                     <img src="assets/project-images/qsure.png" alt="qsure project" class="project-thumbnail" />
@@ -407,8 +404,8 @@
                       <div class="text-projectcard-title">ACE QSure 360</div>
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
-                    <div class="text-projectcard-description">Quality Assurance suite for field inspections and precision mechanical testing.</div>
-                    <span class="project-metric">Field-deployed quality assurance · Firebase-powered</span>
+                    <div class="text-projectcard-description">A field-first QA toolkit for inspections that need to stay fast, accurate, and easy to use on the move.</div>
+                    <span class="project-metric">Built for field teams that need QA to stay quick and simple</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Flutter</span>
                       <span class="project-card-tag">Dart</span>
@@ -422,11 +419,11 @@
                   </div>
                   <div class="project-card-body">
                     <div class="projectcard-title-row">
-                      <div class="text-projectcard-title">CDC Packing System</div>
+                      <div class="text-projectcard-title">Packing System</div>
                       <img src="assets/icon-swipe-up.svg" alt="icon swipe" class="icon-projectcard-arrow" />
                     </div>
-                    <div class="text-projectcard-description">Industrial packing solution with Zebra hardware integration for QR lifecycle management.</div>
-                    <span class="project-metric">Zebra hardware integrated · live in warehouse operations</span>
+                    <div class="text-projectcard-description">A packing workflow built for the warehouse floor, with Zebra hardware doing the heavy lifting behind the scenes.</div>
+                    <span class="project-metric">Warehouse-friendly workflows with Zebra hardware under the hood</span>
                     <div class="project-card-tags">
                       <span class="project-card-tag">Blazor Web</span>
                       <span class="project-card-tag">Flutter Mobile</span>
@@ -435,13 +432,9 @@
                   </div>
                 </a>
               </div>
-            </div>
-
+              <div class="projects-footer-note">And a few more in the sketchbook.</div>
             </div>
           </div>
-        </div>
-        <div class="text-projectpage-overline">
-          And many more...
         </div>
       </div>
       <div class="section-divider">
@@ -458,7 +451,7 @@
             <div class="experience-card up-slider">
               <div class="text-projectpage-heading info-experience">AceMicromatic MIT</div>
               <div class="text-projectpage-subheading info">Software Engineer</div>
-              <div class="text-info-meta">August &#x27;23 - Present</div>
+              <div class="text-info-meta">August &#x27;23 - June &#x27;26</div>
               <div class="exp-location">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 Bengaluru, India
