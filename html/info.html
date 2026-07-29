@@ -130,16 +130,16 @@
 
     /* the teal/green glow that used to sit behind the info content */
     #about {
-      background-image: radial-gradient(circle farthest-side at 50% 0,
-          rgb(51 233 235 / 22%),
-          rgba(0, 0, 0, 0));
+      margin-top: 10vh;
+      background-image: radial-gradient(circle farthest-side at 50% 0, rgb(51 233 235 / 15%) 30%,          rgba(0, 0, 0, 0),rgba(0, 0, 0, 0));
     }
 
     .info-portrait {
       display: block;
       width: 100%;
-      height: auto;
+      height: 50vh;
       border-radius: 8px;
+      object-fit: cover;
     }
 
     .info-prose p {
@@ -215,11 +215,7 @@
 
     <!-- ==================== HERO ==================== -->
     <section class="section-hero" id="top" aria-label="Hero">
-      <div class="container-hero-image">
-        <div class="window-outline">
-          <div class="window-main">
-            <div class="window-content">
-              <div class="hero-text-content">
+<div class="hero-text-content">
                 <div class="hero-heading">
                   <div class="text-hero-serif">Greetings, friend.</div>
                 </div>
@@ -236,11 +232,6 @@
                   </a>
                 </div>
               </div>
-              <div class="window-grain"></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <div class="section-divider">
@@ -252,19 +243,8 @@
     <!-- ==================== ABOUT ==================== -->
     <section class="section" id="about" aria-label="About">
       <div class="wrap">
-        <div class="section-head">
-          <div class="section-head-left">
+
             <p class="overline">About me</p>
-            <h2 class="section-title">A developer who<br />likes shipping.</h2>
-          </div>
-          <div class="section-head-right">
-            <p class="section-lede">
-              Four years spent between industrial robustness and modern UX — six live apps on the
-              App Store and Play Store, eight enterprise projects, and real-time systems carrying
-              1,000+ concurrent streams.
-            </p>
-          </div>
-        </div>
 
         <div class="split info-split">
           <div class="split-col up-slider">
