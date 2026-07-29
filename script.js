@@ -43,24 +43,25 @@ const slideFrom = (selector, direction) => {
 slideFrom(".left-sliders", "left")
 slideFrom(".right-sliders", "right")
 
-document.getElementById("links-btn").addEventListener("click", () => {
-  document.getElementsByClassName("links-overlay")[0].style.display = "flex"
-  document
-    .getElementsByClassName("links-overlay")[0]
-    .classList.add("links-overlay-opacity")
-  document.getElementById("links-btn").style.zIndex = -1
-})
-document
-  .getElementsByClassName("links-overlay")[0]
-  .addEventListener("click", function () {
+const linksBtn = document.getElementById("links-btn")
+const linksOverlay = document.getElementsByClassName("links-overlay")[0]
+
+if (linksBtn && linksOverlay) {
+  linksBtn.addEventListener("click", () => {
+    linksOverlay.style.display = "flex"
+    linksOverlay.classList.add("links-overlay-opacity")
+    linksBtn.style.zIndex = -1
+  })
+  linksOverlay.addEventListener("click", function () {
     const overlay = this
     this.classList.remove("links-overlay-opacity")
-    document.getElementById("links-btn").innerHTML = "Links"
-    document.getElementById("links-btn").style.zIndex = 0
+    linksBtn.innerHTML = "Links"
+    linksBtn.style.zIndex = 0
     setTimeout(() => {
       overlay.style.display = "none"
     }, 700)
   })
+}
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
@@ -155,74 +156,190 @@ if (textEl) {
   }, 4000);
 }
 
-/* === Optimized Three.js Particle Background in Hero === */
+/* === Signature hero visual: an interactive point cloud === */
 if (typeof THREE !== 'undefined') {
   const canvas = document.getElementById('hero-canvas');
-  if (canvas) {
+  if (canvas && canvas.parentElement) {
+    const host = canvas.parentElement;
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: false, powerPreference: "low-power" });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.z = 6.2;
 
-    // Particle field geometry
-    const count = 100; // Reduced count for higher performance
-    const positions = new Float32Array(count * 3);
-    for (let i = 0; i < count * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 12; // X
-      positions[i + 1] = (Math.random() - 0.5) * 12; // Y
-      positions[i + 2] = (Math.random() - 0.5) * 8 - 4; // Z
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+      alpha: true,
+      antialias: true,
+      powerPreference: 'low-power'
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Points spread evenly over a sphere (Fibonacci lattice), so the surface
+    // reads as one object instead of random noise.
+    const COUNT = 1800;
+    const RADIUS = 2.4;
+    const positions = new Float32Array(COUNT * 3);
+    const colors = new Float32Array(COUNT * 3);
+    const base = new Float32Array(COUNT * 3);
+    const phase = new Float32Array(COUNT);
+
+    const golden = Math.PI * (3 - Math.sqrt(5));
+    const accent = new THREE.Color(0x12a588);
+    const plain = new THREE.Color(0xf2f2f2);
+
+    for (let i = 0; i < COUNT; i++) {
+      const y = 1 - (i / (COUNT - 1)) * 2;
+      const ring = Math.sqrt(Math.max(0, 1 - y * y));
+      const theta = golden * i;
+      const i3 = i * 3;
+
+      base[i3] = Math.cos(theta) * ring;
+      base[i3 + 1] = y;
+      base[i3 + 2] = Math.sin(theta) * ring;
+
+      positions[i3] = base[i3] * RADIUS;
+      positions[i3 + 1] = base[i3 + 1] * RADIUS;
+      positions[i3 + 2] = base[i3 + 2] * RADIUS;
+
+      phase[i] = Math.random() * Math.PI * 2;
+
+      const tint = i % 13 === 0 ? accent : plain;
+      colors[i3] = tint.r;
+      colors[i3 + 1] = tint.g;
+      colors[i3 + 2] = tint.b;
     }
+
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     const material = new THREE.PointsMaterial({
-      size: 0.04,
-      color: 0xffffff,
+      size: 0.03,
+      sizeAttenuation: true,
+      vertexColors: true,
       transparent: true,
-      opacity: 0.4,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending
+      opacity: 0.9,
+      depthWrite: false
     });
 
-    const points = new THREE.Points(geometry, material);
-    scene.add(points);
-    camera.position.z = 4;
+    const cloud = new THREE.Points(geometry, material);
+    const group = new THREE.Group();
+    group.add(cloud);
+    group.rotation.z = -0.24;
+    scene.add(group);
 
-    const handleResize = () => {
-      const w = canvas.parentElement.clientWidth;
-      const h = canvas.parentElement.clientHeight;
+    const resize = () => {
+      const w = Math.max(1, host.clientWidth);
+      const h = Math.max(1, host.clientHeight);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h, false);
     };
-    window.addEventListener('resize', handleResize);
-    handleResize();
+    window.addEventListener('resize', resize);
+    resize();
 
-    let animationFrameId = null;
-    let isCanvasVisible = true;
+    // Pointer only nudges the cloud — it never takes it over.
+    const pointer = { x: 0, y: 0 };
+    const eased = { x: 0, y: 0 };
+    if (!reducedMotion) {
+      window.addEventListener('pointermove', (event) => {
+        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+        pointer.y = (event.clientY / window.innerHeight) * 2 - 1;
+      }, { passive: true });
+    }
 
-    const animateParticles = () => {
-      if (!isCanvasVisible) return;
-      animationFrameId = requestAnimationFrame(animateParticles);
-      points.rotation.y += 0.0004;
-      points.rotation.x += 0.0002;
+    const attr = geometry.getAttribute('position');
+    let frameId = null;
+    let visible = true;
+    let clock = 0;
+
+    const render = () => {
+      frameId = requestAnimationFrame(render);
+      if (!visible) return;
+
+      clock += 0.006;
+      eased.x += (pointer.x - eased.x) * 0.045;
+      eased.y += (pointer.y - eased.y) * 0.045;
+
+      // Slow breathing displacement along each point's own normal.
+      for (let i = 0; i < COUNT; i++) {
+        const i3 = i * 3;
+        const wave =
+          Math.sin(clock + phase[i] + base[i3 + 1] * 2.6) * 0.055 +
+          Math.sin(clock * 0.6 + base[i3] * 3.1) * 0.03;
+        const r = RADIUS + wave + eased.x * base[i3] * 0.09;
+        attr.array[i3] = base[i3] * r;
+        attr.array[i3 + 1] = base[i3 + 1] * r;
+        attr.array[i3 + 2] = base[i3 + 2] * r;
+      }
+      attr.needsUpdate = true;
+
+      group.rotation.y += 0.0016;
+      group.rotation.x += (eased.y * 0.28 - group.rotation.x) * 0.05;
+      group.position.x += (eased.x * 0.12 - group.position.x) * 0.05;
+
       renderer.render(scene, camera);
     };
 
-    // Use IntersectionObserver to stop rendering when canvas is out of view
-    const canvasObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        isCanvasVisible = entry.isIntersecting;
-        if (isCanvasVisible) {
-          cancelAnimationFrame(animationFrameId);
-          animateParticles();
-        } else {
-          cancelAnimationFrame(animationFrameId);
+    if (reducedMotion) {
+      renderer.render(scene, camera);
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { visible = entry.isIntersecting; });
+      }, { threshold: 0.02 });
+      observer.observe(canvas);
+      render();
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          cancelAnimationFrame(frameId);
+          frameId = null;
+        } else if (!frameId) {
+          render();
         }
       });
-    }, { threshold: 0.05 });
-    canvasObserver.observe(canvas);
+    }
   }
+}
+
+/* === Cursor label on project cards === */
+const workCursor = document.querySelector('.work-cursor')
+if (workCursor && !reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+  const label = workCursor.querySelector('span')
+  const target = { x: 0, y: 0 }
+  const current = { x: 0, y: 0 }
+  let active = false
+  let cursorFrame = null
+
+  const followCursor = () => {
+    current.x += (target.x - current.x) * 0.18
+    current.y += (target.y - current.y) * 0.18
+    workCursor.style.translate = `${current.x}px ${current.y}px`
+    if (active || Math.abs(target.x - current.x) > 0.5) {
+      cursorFrame = requestAnimationFrame(followCursor)
+    } else {
+      cursorFrame = null
+    }
+  }
+
+  document.querySelectorAll('[data-preview]').forEach((card) => {
+    card.addEventListener('pointerenter', (event) => {
+      label.textContent = card.dataset.preview
+      target.x = current.x = event.clientX
+      target.y = current.y = event.clientY
+      active = true
+      workCursor.classList.add('is-visible')
+      if (!cursorFrame) followCursor()
+    })
+    card.addEventListener('pointermove', (event) => {
+      target.x = event.clientX
+      target.y = event.clientY
+      if (!cursorFrame) followCursor()
+    })
+    card.addEventListener('pointerleave', () => {
+      active = false
+      workCursor.classList.remove('is-visible')
+    })
+  })
 }
 
 /* === Throttled Interactive Skill Cards Tilt === */
