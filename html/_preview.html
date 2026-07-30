@@ -3,19 +3,19 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Info | Karthik V</title>
+  <title>Info — Karthik V</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
-    content="About Karthik V — a freelance Flutter and full-stack developer in Bengaluru building mobile apps, real-time dashboards, and IoT web tools."
+    content="About Karthik V — a software engineer in Bengaluru building mobile apps, real-time dashboards, and IIoT tooling. 2,000+ users across 6 shipped apps."
     name="description">
-  <meta content="Info | Karthik V" property="og:title">
+  <meta content="Info — Karthik V" property="og:title">
   <meta
-    content="About Karthik V — a freelance Flutter and full-stack developer in Bengaluru building mobile apps, real-time dashboards, and IoT web tools."
+    content="About Karthik V — a software engineer in Bengaluru building mobile apps, real-time dashboards, and IIoT tooling. 2,000+ users across 6 shipped apps."
     property="og:description">
   <meta content="../assets/logo.webp" property="og:image">
-  <meta content="Info | Karthik V" property="twitter:title">
+  <meta content="Info — Karthik V" property="twitter:title">
   <meta
-    content="About Karthik V — a freelance Flutter and full-stack developer in Bengaluru building mobile apps, real-time dashboards, and IoT web tools."
+    content="About Karthik V — a software engineer in Bengaluru building mobile apps, real-time dashboards, and IIoT tooling. 2,000+ users across 6 shipped apps."
     property="twitter:description">
   <meta content="../assets/logo.webp" property="twitter:image">
   <meta property="og:type" content="website">
@@ -24,154 +24,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/infostyle.css" rel="stylesheet" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900%7CJetBrains+Mono:100,200,300,regular,500,600,700,800%7CGloock:regular%7CPlayfair+Display:500italic,600italic,700italic"
     media="all">
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    body,
-    html {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      -ms-overflow-style: none;
-      overflow: -moz-scrollbars-none;
-    }
-
-    body::-webkit-scrollbar {
-      display: none;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .loading-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      background: #101010;
-      justify-content: center;
-      align-items: center;
-      transition: opacity .8s ease;
-    }
-
-    .loading-overlay::after {
-      content: "";
-      width: 32px;
-      height: 32px;
-      border: 2px solid rgba(255, 255, 255, 0.08);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    @media screen and (min-width: 801px) {
-      .loading-overlay {
-        display: flex;
-      }
-
-      main {
-        opacity: 0;
-      }
-    }
-
-    .loading-overlay.hide {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    main.reveal {
-      opacity: 1 !important;
-      animation: .8s cubic-bezier(.22, 1, .36, 1) fadeIn;
-    }
-
-    .fade-in {
-      animation: 1s cubic-bezier(.22, 1, .36, 1) fadeInUp;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: scale(.98);
-      }
-
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* --- info page only ------------------------------------------------- */
-
-    /* the teal/green glow that used to sit behind the info content */
-    #about {
-      background-image: radial-gradient(circle farthest-side at 50% 0,
-          rgb(51 233 235 / 22%),
-          rgba(0, 0, 0, 0));
-    }
-
-    .info-portrait {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .info-prose p {
-      margin: 0 0 20px;
-      max-width: 52ch;
-      font-size: clamp(0.98rem, 1.1vw, 1.075rem);
-      line-height: 1.75;
-      color: var(--text-body);
-    }
-
-    .info-prose p:last-child {
-      margin-bottom: 0;
-    }
-
-    .info-prose .lead {
-      font-family: Gloock, serif;
-      font-style: italic;
-      font-size: clamp(1.3rem, 2vw, 1.7rem);
-      line-height: 1.35;
-      color: var(--on-background);
-    }
-
-    .info-split {
-      align-items: start;
-    }
-
-    @media screen and (max-width: 860px) {
-      .info-split {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-  </style>
+  
 <style>.section-hero{min-height:0!important;padding-top:120px;padding-bottom:60px}main{opacity:1!important}.up-slider{opacity:1!important;transform:none!important}</style></head>
 
 <body class="body home">
@@ -229,7 +86,7 @@
                     systems</span>, and the rest of it poking at whatever technology looks interesting that week.
                 </div>
                 <div class="hero-scroll-indicator">&darr;</div>
-                <div class="hero-cta-wrapper" style="justify-content: center; margin-top: 10px;">
+                <div class="hero-cta-wrapper">
                   <a href="mailto:karthikv2910@gmail.com" class="contact-btn-white magnetic-button">
                     Let's work together
                     <span class="hero-cta-arrow">&nbsp;↗</span>
@@ -279,20 +136,19 @@
           <div class="split-col info-prose up-slider">
             <p class="lead">Hi, I'm Karthik.</p>
             <p>
-              I'm a software developer who spends most of his time tapping away at a keyboard, casting code
-              spells that (mostly) work as intended. When I'm not debugging mysterious errors, I'm out
-              exploring the enchanted forests of niche technologies, trying to bring a little magic into the
-              mundane world of tech.
+              I'm a software engineer in Bengaluru who builds mobile apps, real-time dashboards, and
+              industrial IoT tooling — the kind of software that runs on a shop floor, surfaces live
+              machine data, and ships to real users on the App Store and Play Store.
             </p>
             <p>
-              I'm on a quest to turn the ordinary into extraordinary through design and implementation —
-              crafting digital experiences and side-project tools that might just make you say, "Wow, I didn't
-              know I needed that." Whether it's making your app faster, your interface smoother, or your
-              digital life a bit more accessible, I'm all about building things people actually enjoy using.
+              I focus on making complex systems feel simple: offline-first sync patterns, high-frequency
+              data streams rendered without dropped frames, and UI that operators can read at a glance.
+              Every project I ship teaches me something about performance, reliability, or how people
+              actually use the tools they're given.
             </p>
             <p>
-              When I'm not conjuring up code, you'll find me playing indie games or watching far too many
-              movies.
+              Outside of work, I play indie games, watch too many movies, and take apart hardware I
+              probably shouldn't.
             </p>
           </div>
         </div>

@@ -124,7 +124,9 @@
           <div class="text-projectpage-year anim-fade-in delay-3">AmiT / AceMicromatic MIT - Jan' 25</div>
         </div>
         <div class="project-banner-image-wrapper anim-slide-up delay-5">
-          <img src="../assets/project-images/imtex1.webp" loading="eager" alt="IMTEX 2025 WebVR banner" class="image-project-banner">
+          <div class="image-project-banner" style="background: linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #1a0533 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; min-height: 300px; color: rgba(255,255,255,0.6); font-size: 1.2rem; text-align: center; padding: 2rem;">
+            <span>IMTEX 2025 WebVR — 3D Showroom Screenshot<br><span style="font-size:0.85rem;opacity:0.6;">Add a real screen capture here</span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -139,13 +141,17 @@
 
     <section id="imtex-overview" class="section-overview fade-up">
       <div class="overview-text-wrapper">
-        <div>The Vision</div>
+        <div>30+ machine models, one browser, stable 30 fps.</div>
         <div class="text-projectpage-body">
-          Industrial exhibitions like IMTEX are massive, but even the biggest booths have physical limits. My goal was to break those boundaries by creating a <b>high-performance 3D Virtual Showroom</b> that brings Ace Micromatic's entire 30+ machine catalog to anyone with a browser. 
+          The problem was delivering a walkable 3D showroom — 30+ detailed machine models, each with interactive spec panels — that runs smoothly in a browser on mid-range phones and laptops. I built the <b>IMTEX 2025 WebVR</b> experience on <b>Next.js 14</b> and <b>React Three Fiber (R3F)</b>.
           <br><br>
-          Built on <b>Next.js 14</b> and <b>React Three Fiber</b>, this wasn't just about showing images—it was about creating an immersive, interactive digital floor. I engineered a seamless navigation system using <b>GSAP</b>, allowing users to move through a futuristic showroom and interact with 1:1 scale machine models. Each station provides a deep dive into technical specs, PDF brochures, and image galleries, bridging the gap between physical hardware and digital exploration.
+          I engineered a GSAP-driven navigation system for moving through the virtual showroom and interacting with 1:1 scale machine models. Each station includes technical specs, PDF brochures, and image galleries — bridging physical hardware and digital exploration. The core challenge was 3D performance: I managed draw-call batching, GLB compression via Draco, and LOD (level-of-detail) switching so a 50 MB model catalog loads and renders on a 3-year-old phone.
           <br><br>
-          This project pushed me to master <b>3D performance optimization</b>, managing dozens of detailed GLB models on mobile devices while maintaining a premium, high-fidelity aesthetic. It transformed the exhibition experience into a persistent, global sales tool that lives on long after the physical event.
+          <b>Why Next.js/R3F over a lighter stack:</b> For a pure 3D showroom, a simpler Three.js app would have been lighter. But the project needed dynamic routing for 30+ machine detail pages, SSR for SEO, and a CMS-backed spec database — Next.js gave us all of that with R3F as a first-class citizen. The trade-off is a heavier initial bundle (~2.5 MB gzip) mitigated by route-based code splitting and dynamic model loading.
+          <br><br>
+          I owned the entire implementation — 3D scene assembly, performance optimization, Next.js routing, and GSAP interactions — while a 3D artist created the GLB machine models and textures.
+          <br><br>
+          The result transformed a physical exhibition booth into a persistent, global sales tool that lives on long after the event.
         </div>
       </div>
 
@@ -175,7 +181,9 @@
           </div>
           <div class="moneyshots-content">
             <div class="media-caption-wrapper">
-              <img src="../assets/project-images/imtex1.webp" loading="lazy" alt="IMTEX 2025 WebVR showroom view" class="image-default highlight-outline">
+              <div style="background: linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #1a0533 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; min-height: 220px; color: rgba(255,255,255,0.5); text-align: center; padding: 2rem;" class="image-default highlight-outline" role="img" aria-label="IMTEX 2025 WebVR showroom view">
+                <span>Showroom View<br><span style="font-size:0.8rem;opacity:0.5;">Replace with screenshot</span></span>
+              </div>
               <div class="caption-wrapper">
                 <div class="text-image-caption"><span class="text-figure-caption">0.1</span> Showroom View</div>
                 <div class="chip-medium-type">
@@ -184,7 +192,9 @@
               </div>
             </div>
             <div class="media-caption-wrapper">
-              <img src="../assets/project-images/imtex2.webp" loading="lazy" alt="IMTEX 2025 WebVR machine interaction" class="image-default highlight-outline">
+              <div style="background: linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #1a0533 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; min-height: 220px; color: rgba(255,255,255,0.5); text-align: center; padding: 2rem;" class="image-default highlight-outline" role="img" aria-label="IMTEX 2025 WebVR machine interaction">
+                <span>Machine Interaction<br><span style="font-size:0.8rem;opacity:0.5;">Replace with screenshot</span></span>
+              </div>
               <div class="caption-wrapper">
                 <div class="text-image-caption"><span class="text-figure-caption">0.2</span> Machine Interaction</div>
                 <div class="chip-medium-type">
@@ -202,58 +212,49 @@
       <img src="../assets/divider2.webp">
     </div>
   </div>
-  <div class="section-footer">
+  <footer class="section-footer">
     <div class="container-footer">
       <div class="footer-top-wrapper">
         <div>
-          <img
-          src="../assets/logo.webp"
-          loading="lazy" alt="" class="logomark-footer" />
-          <div class="text-footer-link" style="margin-top: 1rem;">Karthik V</div>
-          <div class="text-projectpage-body">Developer</div>
+          <img src="../assets/logo.webp" alt="Karthik V" class="logomark-footer" loading="lazy" />
+          <div class="text-footer-copyright">Karthik V</div>
+          <div class="text-under-copyright">Developer &middot; Bengaluru, India</div>
         </div>
-
-
         <div class="footer-links-column-wrapper">
           <div class="footer-links-column">
-            <div class="text-footer-links-overline">MAIN</div>
+            <div class="text-footer-links-overline">Navigate</div>
             <div class="footer-links-wrapper">
-              <a href="../index.html" class="footer-link w-inline-block">
-                <div class="text-footer-link">Work</div>
-              </a>
-              <a href="info.html" aria-current="page" class="footer-link w-inline-block w--current">
-                <div class="text-footer-link">Info</div>
-              </a>
+              <a href="../index.html" class="footer-link">Work</a>
+              <a href="info.html" class="footer-link">Info</a>
             </div>
           </div>
           <div class="footer-links-column">
-            <div class="text-footer-links-overline">CONTACT</div>
+            <div class="text-footer-links-overline">Connect</div>
             <div class="footer-links-wrapper">
-              <a href="https://www.linkedin.com/in/karthikv11" target="_blank" class="footer-link w-inline-block">
-                <div class="text-footer-link">LinkedIn</div>
-                <img
-                  src="../assets/icon-swipe-up.svg"
-                  loading="lazy" alt="" class="icon-external" />
-              </a>
-              <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=sharing"
-                target="_blank" class="footer-link w-inline-block">
-                <div class="text-footer-link">Resume</div>
-                <img
-                  src="../assets/icon-swipe-up.svg"
-                  loading="lazy" alt="" class="icon-external" />
-              </a>
+              <a href="mailto:karthikv2910@gmail.com" class="footer-link">Email</a>
+              <a href="https://www.linkedin.com/in/karthikv11" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+              <a href="https://github.com/Karthik-v11" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+            </div>
+          </div>
+          <div class="footer-links-column">
+            <div class="text-footer-links-overline">More</div>
+            <div class="footer-links-wrapper">
+              <a href="https://medium.com/@karthikv2910" target="_blank" rel="noopener" class="footer-link">Medium</a>
+              <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" rel="noopener" class="footer-link">R&eacute;sum&eacute; <svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10" /></svg></a>
             </div>
           </div>
         </div>
       </div>
-      <div style="text-align: center;">
-          <div class="text-footer-copyright">Thank you for checking out my portfolio!
-          </div>
-          <div class="text-under-copyright">Hope you enjoyed scrolling!
-          </div>
+      <div class="footer-bottom-wrapper">
+        <div class="footer-bottom-left">
+          <div class="text-footer-copyright">&copy; <span id="footer-year"></span> Karthik V</div>
+        </div>
+        <div class="footer-bottom-right">
+          <div class="text-under-copyright">Built with too much coffee.</div>
+        </div>
       </div>
     </div>
-  </div>
+  </footer>
   <script src="../script.js"></script>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=63dcb6e1a80e9454b630f4c4"
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -307,6 +308,6 @@
 
     sections.forEach((s) => timelineObserver.observe(s));
   </script>
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
 </body>
-
 </html>

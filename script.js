@@ -474,3 +474,45 @@ window.addEventListener('keydown', (e) => {
 
   window.addEventListener('beforeunload', () => clearInterval(tick));
 })();
+
+/* === Loading overlay === */
+(function () {
+  var overlay = document.querySelector(".loading-overlay");
+  if (!overlay) return;
+  var done = false;
+
+  function reveal() {
+    if (done) return;
+    done = true;
+    var main = document.querySelector("main");
+    if (main) main.classList.add("reveal");
+    document.querySelectorAll(".section-hero").forEach(function (el) { el.classList.add("fade-in"); });
+    overlay.classList.add("hide");
+    setTimeout(function () { overlay.style.display = "none"; }, 800);
+  }
+
+  if (window.innerWidth > 800) {
+    if (document.readyState === "complete") {
+      setTimeout(reveal, 200);
+    } else {
+      window.addEventListener("load", function () { setTimeout(reveal, 200); });
+    }
+    setTimeout(reveal, 3000);
+  } else {
+    overlay.style.display = "none";
+  }
+})();
+
+/* === Nav toggle + footer year === */
+document.querySelectorAll(".nav-toggle").forEach(function (el) {
+  el.addEventListener("click", function (e) {
+    var goTo = this.getAttribute("href");
+    if (goTo !== "/index.html") {
+      e.preventDefault();
+      document.querySelector(".nav-indicator-pill").classList.add("work");
+      document.querySelector(".nav-indicator-glow").classList.add("pill-change");
+      setTimeout(function () { window.location = goTo; }, 600);
+    }
+  });
+});
+document.getElementById("footer-year").textContent = new Date().getFullYear();

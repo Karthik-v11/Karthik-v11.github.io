@@ -111,7 +111,7 @@
           <div class="text-hero project-title anim-slide-up delay-2">Assembly System</div>
           <div class="text-projectpage-year anim-fade-in delay-3">AmiT / AceMicromatic MIT - Nov' 24</div>
         </div>
-        <div class="project-banner-image-wrapper anim-slide-up delay-5"><img src="../assets/project-images/danfoss1.webp" loading="eager" alt=" Assembly banner" class="image-project-banner"></div>
+        <div class="project-banner-image-wrapper anim-slide-up delay-5"><img src="../assets/project-images/danfoss.png" loading="eager" alt="Assembly System dashboard" class="image-project-banner"></div>
       </div>
     </div>
     <div class="project-overview-noise"></div>
@@ -124,13 +124,17 @@
     </nav>
     <section id="overview" class="section-overview fade-up">
     <div class="overview-text-wrapper">
-      <div>Zero-Error Orchestration</div>
+      <div>Real-time process enforcement, stage by stage.</div>
       <div class="text-projectpage-body">
-        In a mission-critical assembly line like <b>Shop floor</b>, there is no such thing as "close enough." A single missed bolt or an incorrect sequence can lead to catastrophic unit failure. I engineered the <b> Assembly System</b> to act as a digital guardrail for the entire process.
+        The problem was real-time orchestration on a mission-critical assembly line — where a single missed bolt or incorrect sequence can lead to catastrophic unit failure. I engineered the <b>Assembly System</b> to act as a digital guardrail for the entire process.
         <br><br>
-        Using <b>Blazor Server</b> and <b>SignalR</b>, we created a real-time "Process Cockpit" that enforces stage-by-stage interlocks. The operator cannot move forward until the system verifies specific torque values from automated bolting tools or manual QC inputs. I implemented <b>SQL Service Broker</b> triggers to ensure sub-second latency, giving the line the speed it needs without compromising on safety.
+        Using <b>Blazor Server</b> and <b>SignalR</b>, I built a real-time "Process Cockpit" that enforces stage-by-stage interlocks. The operator cannot advance until the system verifies torque values from automated bolting tools or manual QC inputs. I implemented <b>SQL Service Broker</b> triggers for sub-second latency, keeping the line fast without compromising safety.
         <br><br>
-        This project was a masterclass in <b>real-time reliability</b>. It taught me how to bridge the gap between high-frequency industrial hardware signals and a responsive web UI, ensuring 100% compliance in an environment where precision is non-negotiable.
+        <b>Why Blazor Server over WASM:</b> The process cockpit needs instant UI updates tied to hardware signals — Blazor Server's persistent SignalR circuit eliminates the Wasm download overhead and keeps the DOM in sync with SQL Service Broker events at &lt;100 ms latency. The trade-off is higher server memory per session, which we capped via circuit-level resource quotas.
+        <br><br>
+        I personally owned the full-stack implementation — from SQL trigger design to SignalR hub wiring to the Blazor UI — while a hardware engineer handled the PLC integration on the other end of the serial protocol.
+        <br><br>
+        The result was 100% compliance enforcement in an environment where precision is non-negotiable, bridging high-frequency industrial hardware signals with a responsive web UI.
       </div>
     </div>
 
@@ -160,7 +164,7 @@
         </div>
         <div class="moneyshots-content">
           <div class="media-caption-wrapper">
-            <img src="../assets/project-images/danfoss1.webp" loading="lazy" alt="Assembly Process Cockpit" class="image-default highlight-outline">
+            <img src="../assets/project-images/danfoss.png" loading="lazy" alt="Assembly Process Cockpit" class="image-default highlight-outline">
             <div class="caption-wrapper">
               <div class="text-image-caption"><span class="text-figure-caption">0.1</span> Process Cockpit</div>
               <div class="chip-medium-type">
@@ -169,7 +173,9 @@
             </div>
           </div>
           <div class="media-caption-wrapper">
-            <img src="../assets/project-images/danfoss2.webp" loading="lazy" alt=" Assembly Compliance Tracker" class="image-default highlight-outline">
+            <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; min-height: 220px; color: rgba(255,255,255,0.5); text-align: center; padding: 2rem;" class="image-default highlight-outline" role="img" aria-label="Assembly Compliance Tracker">
+              <span>Compliance Tracker View<br><span style="font-size:0.8rem;opacity:0.5;">Add screenshot here</span></span>
+            </div>
             <div class="caption-wrapper">
               <div class="text-image-caption"><span class="text-figure-caption">0.2</span> Compliance Tracker</div>
               <div class="chip-medium-type">
@@ -183,58 +189,49 @@
   </section>
   </div>
   <div class="section-divider"><div class="divider-wrapper up-slider"><img src="../assets/divider2.webp"></div></div>
-  <div class="section-footer">
+  <footer class="section-footer">
     <div class="container-footer">
       <div class="footer-top-wrapper">
         <div>
-          <img
-          src="../assets/logo.webp"
-          loading="lazy" alt="" class="logomark-footer" />
-          <div class="text-footer-link" style="margin-top: 1rem;">Karthik V</div>
-          <div class="text-projectpage-body">Developer</div>
+          <img src="../assets/logo.webp" alt="Karthik V" class="logomark-footer" loading="lazy" />
+          <div class="text-footer-copyright">Karthik V</div>
+          <div class="text-under-copyright">Developer &middot; Bengaluru, India</div>
         </div>
-
-
         <div class="footer-links-column-wrapper">
           <div class="footer-links-column">
-            <div class="text-footer-links-overline">MAIN</div>
+            <div class="text-footer-links-overline">Navigate</div>
             <div class="footer-links-wrapper">
-              <a href="../index.html" class="footer-link w-inline-block">
-                <div class="text-footer-link">Work</div>
-              </a>
-              <a href="info.html" aria-current="page" class="footer-link w-inline-block w--current">
-                <div class="text-footer-link">Info</div>
-              </a>
+              <a href="../index.html" class="footer-link">Work</a>
+              <a href="info.html" class="footer-link">Info</a>
             </div>
           </div>
           <div class="footer-links-column">
-            <div class="text-footer-links-overline">CONTACT</div>
+            <div class="text-footer-links-overline">Connect</div>
             <div class="footer-links-wrapper">
-              <a href="https://www.linkedin.com/in/karthikv11" target="_blank" class="footer-link w-inline-block">
-                <div class="text-footer-link">LinkedIn</div>
-                <img
-                  src="../assets/icon-swipe-up.svg"
-                  loading="lazy" alt="" class="icon-external" />
-              </a>
-              <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=sharing"
-                target="_blank" class="footer-link w-inline-block">
-                <div class="text-footer-link">Resume</div>
-                <img
-                  src="../assets/icon-swipe-up.svg"
-                  loading="lazy" alt="" class="icon-external" />
-              </a>
+              <a href="mailto:karthikv2910@gmail.com" class="footer-link">Email</a>
+              <a href="https://www.linkedin.com/in/karthikv11" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+              <a href="https://github.com/Karthik-v11" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+            </div>
+          </div>
+          <div class="footer-links-column">
+            <div class="text-footer-links-overline">More</div>
+            <div class="footer-links-wrapper">
+              <a href="https://medium.com/@karthikv2910" target="_blank" rel="noopener" class="footer-link">Medium</a>
+              <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" rel="noopener" class="footer-link">R&eacute;sum&eacute; <svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10" /></svg></a>
             </div>
           </div>
         </div>
       </div>
-      <div style="text-align: center;">
-          <div class="text-footer-copyright">Thank you for checking out my portfolio!
-          </div>
-          <div class="text-under-copyright">Hope you enjoyed scrolling!
-          </div>
+      <div class="footer-bottom-wrapper">
+        <div class="footer-bottom-left">
+          <div class="text-footer-copyright">&copy; <span id="footer-year"></span> Karthik V</div>
+        </div>
+        <div class="footer-bottom-right">
+          <div class="text-under-copyright">Built with too much coffee.</div>
+        </div>
       </div>
     </div>
-  </div>
+  </footer>
   <script src="../script.js"></script>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=63dcb6e1a80e9454b630f4c4"
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -284,5 +281,6 @@
     }, { threshold: 0.3 });
     sections.forEach((s) => timelineObserver.observe(s));
   </script>
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
