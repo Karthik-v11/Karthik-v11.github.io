@@ -3,6 +3,7 @@ const observerOptions = {
   rootMargin: "0px 0px -40px 0px",
 }
 
+// Animates elements sliding up with staggered delays when they scroll into view
 const animateOnScroll = (selector, animateClass, staggerBase = 0.12) => {
   const elements = document.querySelectorAll(selector)
   const observer = new IntersectionObserver((entries, obs) => {
@@ -21,28 +22,7 @@ const animateOnScroll = (selector, animateClass, staggerBase = 0.12) => {
 
 animateOnScroll(".up-slider", "slide-up", 0.12)
 
-const slideFrom = (selector, direction) => {
-  const elements = document.querySelectorAll(selector)
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const cls = direction === "left" ? "slide-right" : "slide-left"
-        entry.target.classList.add(cls)
-        const onEnd = () => {
-          entry.target.classList.add("opacity-full")
-          entry.target.removeEventListener("animationend", onEnd)
-        }
-        entry.target.addEventListener("animationend", onEnd)
-        obs.unobserve(entry.target)
-      }
-    })
-  }, observerOptions)
-  elements.forEach((el) => observer.observe(el))
-}
-
-slideFrom(".left-sliders", "left")
-slideFrom(".right-sliders", "right")
-
+// Toggles the links overlay panel on project pages
 const linksBtn = document.getElementById("links-btn")
 const linksOverlay = document.getElementsByClassName("links-overlay")[0]
 
@@ -63,8 +43,10 @@ if (linksBtn && linksOverlay) {
   })
 }
 
+// Checks whether the user prefers reduced motion
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
+// Updates the scroll progress bar width based on page scroll position
 const progressBar = document.querySelector(".scroll-progress span")
 const updateScrollProgress = () => {
   if (!progressBar) return
@@ -74,6 +56,7 @@ const updateScrollProgress = () => {
 window.addEventListener("scroll", updateScrollProgress, { passive: true })
 updateScrollProgress()
 
+// Moves buttons slightly toward the pointer for a magnetic hover effect
 if (!reducedMotion) {
   document.querySelectorAll(".magnetic-button").forEach((button) => {
     button.addEventListener("pointermove", (event) => {
@@ -84,28 +67,7 @@ if (!reducedMotion) {
   })
 }
 
-const counters = document.querySelectorAll("[data-counter]")
-const countUp = (counter) => {
-  const target = Number(counter.dataset.counter)
-  const suffix = counter.dataset.suffix || ""
-  const start = performance.now()
-  const update = (now) => {
-    const progress = Math.min((now - start) / 1100, 1)
-    counter.textContent = `${Math.floor((1 - Math.pow(1 - progress, 3)) * target).toLocaleString()}${suffix}`
-    if (progress < 1) requestAnimationFrame(update)
-  }
-  requestAnimationFrame(update)
-}
-if (counters.length && !reducedMotion) {
-  const counterObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) { countUp(entry.target); observer.unobserve(entry.target) }
-    })
-  }, { threshold: 0.5 })
-  counters.forEach((counter) => { counter.textContent = `0${counter.dataset.suffix || ""}`; counterObserver.observe(counter) })
-}
-
-/* === Cursor Parallax Glow & Tilt (Hero Section) === */
+// Applies a subtle 3D parallax tilt to the hero window based on mouse position
 if (!reducedMotion) {
   const windowMain = document.querySelector('.window-main');
   if (windowMain) {
@@ -119,11 +81,10 @@ if (!reducedMotion) {
         windowMain.style.setProperty('--mouse-x', `${x}px`);
         windowMain.style.setProperty('--mouse-y', `${y}px`);
 
-        // Subtle 3D tilt/shift
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
-        const rotateX = -(e.clientY - centerY) / (rect.height / 2) * 1.5; // max 1.5deg
-        const rotateY = (e.clientX - centerX) / (rect.width / 2) * 1.5; // max 1.5deg
+        const rotateX = -(e.clientY - centerY) / (rect.height / 2) * 1.5;
+        const rotateY = (e.clientX - centerX) / (rect.width / 2) * 1.5;
         windowMain.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       });
     });
@@ -135,28 +96,7 @@ if (!reducedMotion) {
   }
 }
 
-/* === Smooth Rotating Tagline (Cross-fade) === */
-const phrases = [
-  "build digital products.",
-  "craft Digital Experiences.",
-  "build Real-Time Systems.",
-  "ship Mobile Apps.",
-  "create WebVR Experiences."
-];
-const textEl = document.getElementById("rotating-text");
-if (textEl) {
-  let phraseIdx = 0;
-  setInterval(() => {
-    textEl.classList.add("fade-out");
-    setTimeout(() => {
-      phraseIdx = (phraseIdx + 1) % phrases.length;
-      textEl.textContent = phrases[phraseIdx];
-      textEl.classList.remove("fade-out");
-    }, 450); // matches CSS transition
-  }, 4000);
-}
-
-/* === Signature hero visual: an interactive point cloud === */
+// Renders an interactive 3D point cloud inside the hero canvas with pointer-driven rotation
 if (typeof THREE !== 'undefined') {
   const canvas = document.getElementById('hero-canvas');
   if (canvas && canvas.parentElement) {
@@ -173,8 +113,6 @@ if (typeof THREE !== 'undefined') {
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // Points spread evenly over a sphere (Fibonacci lattice), so the surface
-    // reads as one object instead of random noise.
     const COUNT = 1400;
     const RADIUS = 1.8;
     const positions = new Float32Array(COUNT * 3);
@@ -237,7 +175,6 @@ if (typeof THREE !== 'undefined') {
     window.addEventListener('resize', resize);
     resize();
 
-    // Pointer only nudges the cloud — it never takes it over.
     const pointer = { x: 0, y: 0 };
     const eased = { x: 0, y: 0 };
     if (!reducedMotion) {
@@ -260,7 +197,6 @@ if (typeof THREE !== 'undefined') {
       eased.x += (pointer.x - eased.x) * 0.045;
       eased.y += (pointer.y - eased.y) * 0.045;
 
-      // Slow breathing displacement along each point's own normal.
       for (let i = 0; i < COUNT; i++) {
         const i3 = i * 3;
         const wave =
@@ -301,7 +237,7 @@ if (typeof THREE !== 'undefined') {
   }
 }
 
-/* === Cursor label on project cards === */
+// Shows a follow-cursor label on project cards with a smooth easing effect
 const workCursor = document.querySelector('.work-cursor')
 if (workCursor && !reducedMotion && window.matchMedia('(pointer: fine)').matches) {
   const label = workCursor.querySelector('span')
@@ -342,34 +278,7 @@ if (workCursor && !reducedMotion && window.matchMedia('(pointer: fine)').matches
   })
 }
 
-/* === Throttled Interactive Skill Cards Tilt === */
-if (!reducedMotion) {
-  document.querySelectorAll('.skill-card').forEach(card => {
-    let frameId = null;
-    card.addEventListener('pointermove', (e) => {
-      if (frameId) cancelAnimationFrame(frameId);
-      frameId = requestAnimationFrame(() => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const rotateX = -(e.clientY - centerY) / (rect.height / 2) * 8; // max 8deg
-        const rotateY = (e.clientX - centerX) / (rect.width / 2) * 8; // max 8deg
-        card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.04)`;
-        card.style.boxShadow = `0 12px 36px rgba(255, 255, 255, 0.08)`;
-      });
-    });
-    
-    card.addEventListener('pointerleave', () => {
-      if (frameId) cancelAnimationFrame(frameId);
-      card.style.transform = '';
-      card.style.boxShadow = '';
-    });
-  });
-}
-
-/* === Easter Egg ("KARTHIK" confetti) === */
+// Triggers confetti animation when the user types "karthik" on the keyboard
 const triggerConfetti = () => {
   const container = document.createElement('div');
   container.style.position = 'fixed';
@@ -417,7 +326,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-/* === Stop-motion Skills Reel === */
+// Creates a seamless auto-scrolling skills reel that pauses on hover
 (function () {
   const reel = document.getElementById('skillsReel');
   if (!reel || reducedMotion) return;
@@ -426,7 +335,6 @@ window.addEventListener('keydown', (e) => {
   const count = orig.length;
   if (count < 2) return;
 
-  // Clone for seamless infinite loop
   orig.forEach(el => reel.appendChild(el.cloneNode(true)));
 
   const measure = () => {
@@ -466,7 +374,6 @@ window.addEventListener('keydown', (e) => {
   reel.addEventListener('pointerenter', () => { running = false; });
   reel.addEventListener('pointerleave', () => { running = true; });
 
-  // Pause when the tab is hidden
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) { running = false; }
     else { running = true; }
@@ -475,7 +382,7 @@ window.addEventListener('keydown', (e) => {
   window.addEventListener('beforeunload', () => clearInterval(tick));
 })();
 
-/* === Loading overlay === */
+// Shows a loading overlay on page load and fades it out once content is ready
 (function () {
   var overlay = document.querySelector(".loading-overlay");
   if (!overlay) return;
@@ -503,7 +410,28 @@ window.addEventListener('keydown', (e) => {
   }
 })();
 
-/* === Nav toggle + footer year === */
+// Toggles the hamburger mobile menu open and closed
+(function () {
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.querySelector('.mobile-nav');
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener('click', function () {
+    var open = mobileNav.classList.toggle('is-open');
+    hamburger.classList.toggle('is-active', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  mobileNav.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileNav.classList.remove('is-open');
+      hamburger.classList.remove('is-active');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+
+// Animates the nav indicator on tab switch and sets the current year in the footer
 document.querySelectorAll(".nav-toggle").forEach(function (el) {
   el.addEventListener("click", function (e) {
     var goTo = this.getAttribute("href");

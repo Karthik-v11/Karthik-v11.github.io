@@ -31,6 +31,7 @@
 </head>
 
 <body class="body home">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="loading-overlay"></div>
 
   <header class="section-nav">
@@ -62,11 +63,25 @@
           <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link"
             target="_blank" rel="noopener" class="nav-resume-btn">Résumé</a>
         </div>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
   </header>
 
-  <main>
+  <div class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="/index.html" class="mobile-nav-link">Work</a>
+      <a href="html/info.html" class="mobile-nav-link">Info</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" rel="noopener" class="mobile-nav-link">Résumé</a>
+    </div>
+  </div>
+
+  <main id="main-content">
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <!-- ==================== HERO ==================== -->
@@ -612,7 +627,18 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>
-
+  <script>
+    document.querySelectorAll(".nav-toggle").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (this.getAttribute("aria-selected") === "true") return;
+        var goTo = this.getAttribute("href");
+        document.querySelector(".nav-indicator-pill").classList.add("info");
+        document.querySelector(".nav-indicator-glow").classList.add("info");
+        setTimeout(function () { window.location = goTo; }, 600);
+      });
+    });
+  </script>
 </body>
 
 </html>
