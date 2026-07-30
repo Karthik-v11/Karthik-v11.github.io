@@ -163,7 +163,7 @@ if (typeof THREE !== 'undefined') {
     const host = canvas.parentElement;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.z = 6.2;
+    camera.position.z = 5.0;
 
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
@@ -175,8 +175,8 @@ if (typeof THREE !== 'undefined') {
 
     // Points spread evenly over a sphere (Fibonacci lattice), so the surface
     // reads as one object instead of random noise.
-    const COUNT = 1800;
-    const RADIUS = 2.4;
+    const COUNT = 1400;
+    const RADIUS = 1.8;
     const positions = new Float32Array(COUNT * 3);
     const colors = new Float32Array(COUNT * 3);
     const base = new Float32Array(COUNT * 3);
@@ -416,3 +416,61 @@ window.addEventListener('keydown', (e) => {
     keyBuffer = '';
   }
 });
+
+/* === Stop-motion Skills Reel === */
+(function () {
+  const reel = document.getElementById('skillsReel');
+  if (!reel || reducedMotion) return;
+
+  const orig = reel.querySelectorAll('.skill-item');
+  const count = orig.length;
+  if (count < 2) return;
+
+  // Clone for seamless infinite loop
+  orig.forEach(el => reel.appendChild(el.cloneNode(true)));
+
+  const measure = () => {
+    const first = reel.querySelector('.skill-item');
+    if (!first) return 126;
+    const gap = parseFloat(getComputedStyle(reel).gap) || 16;
+    return first.getBoundingClientRect().width + gap;
+  };
+
+  let step = measure();
+  let idx = 0;
+  let running = true;
+  let timer;
+
+  const recalc = () => { step = measure(); };
+  window.addEventListener('resize', recalc);
+
+  const advance = () => {
+    if (!running) return;
+    idx++;
+    const x = -idx * step;
+    reel.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    reel.style.transform = `translateX(${x}px)`;
+
+    if (idx >= count) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        reel.style.transition = 'none';
+        reel.style.transform = 'translateX(0)';
+        idx = 0;
+      }, 600);
+    }
+  };
+
+  let tick = setInterval(advance, 2200);
+
+  reel.addEventListener('pointerenter', () => { running = false; });
+  reel.addEventListener('pointerleave', () => { running = true; });
+
+  // Pause when the tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { running = false; }
+    else { running = true; }
+  });
+
+  window.addEventListener('beforeunload', () => clearInterval(tick));
+})();
