@@ -8,16 +8,21 @@
   <meta
     content="Karthik V — Software Engineer building mobile apps, real-time systems, and 3D web."
     name="description">
+  <link rel="canonical" href="https://karthik-v11.github.io/">
   <meta content="Karthik V — Software Engineer building mobile apps, real-time systems, and 3D web." property="og:title">
   <meta
     content="Karthik V — Software Engineer building mobile apps, real-time systems, and 3D web."
     property="og:description">
-  <meta content="assets/logo.webp" property="og:image">
+  <meta content="https://karthik-v11.github.io/assets/logo.webp" property="og:image">
+  <meta content="https://karthik-v11.github.io/" property="og:url">
+  <meta content="Karthik V" property="og:site_name">
+  <meta content="en_US" property="og:locale">
   <meta content="Karthik V — Software Engineer building mobile apps, real-time systems, and 3D web." property="twitter:title">
   <meta
     content="Karthik V — Software Engineer building mobile apps, real-time systems, and 3D web."
     property="twitter:description">
-  <meta content="assets/logo.webp" property="twitter:image">
+  <meta content="https://karthik-v11.github.io/assets/logo.webp" property="twitter:image">
+  <meta content="@_Karthik_V_" name="twitter:site">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -27,6 +32,12 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900%7CJetBrains+Mono:100,200,300,regular,500,600,700,800%7CGloock:regular%7CPlayfair+Display:500italic,600italic,700italic"
     media="all">
+  <noscript>
+    <style>
+      .loading-overlay { display: none !important; }
+      main { opacity: 1 !important; }
+    </style>
+  </noscript>
 
 </head>
 
@@ -60,7 +71,7 @@
       <div class="nav-right-wrapper">
         <div class="chip-socials-wrapper">
           <a href="#contact" class="nav-text-link">Contact</a>
-          <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link"
+          <a href="assets/resume/Karthik V-Resume.pdf"
             target="_blank" rel="noopener" class="nav-resume-btn">Résumé</a>
         </div>
         <button class="hamburger" aria-label="Toggle menu">
@@ -77,7 +88,7 @@
       <a href="/index.html" class="mobile-nav-link">Work</a>
       <a href="html/info.html" class="mobile-nav-link">Info</a>
       <a href="#contact" class="mobile-nav-link">Contact</a>
-      <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" rel="noopener" class="mobile-nav-link">Résumé</a>
+      <a href="assets/resume/Karthik V-Resume.pdf" target="_blank" rel="noopener" class="mobile-nav-link">Résumé</a>
     </div>
   </div>
 
@@ -135,36 +146,60 @@
         </div>
 
         <div class="work-list">
-          <a href="html/amgmiotproject.html" class="work-card work-card-featured up-slider" data-accent="teal" data-preview="View case study">
+          <a href="html/everythingproject.html" class="work-card work-card-featured up-slider" data-accent="teal" data-preview="View case study">
             <div class="work-media">
-              <img src="assets/project-images/amgmiot.webp" alt="AMG-mIoT dashboard screens" class="work-img" />
+              <img src="assets/project-images/Everything/everything-dashboard.webp" alt="Everything App dashboard banner" class="work-img" />
             </div>
             <div class="work-body">
               <div class="work-meta">
                 <span class="work-index">01</span>
-                <span class="work-role">Flagship · AceMicromatic MIT</span>
+                <span class="work-role">Personal · 2026</span>
               </div>
-              <h3 class="work-title">AMG-mIoT</h3>
-              <p class="work-desc">Live machine data in your pocket. Shop-floor KPIs, alerts and analytics for
-                <strong>2,000+ industrial users</strong> on the App Store &amp; Play Store.</p>
+              <h3 class="work-title">Everything</h3>
+              <p class="work-desc">Four apps replaced by one encrypted local database — tasks, library and finance with
+                no server, no sync conflicts, and no data leaving the device.</p>
               <ul class="work-tags">
                 <li>Flutter</li>
-                <li>Blazor</li>
-                <li>SignalR</li>
-                <li>C#</li>
+                <li>BLoC</li>
+                <li>Drift (SQLCipher)</li>
+                <li>Offline-first</li>
+                <li>Gemini API</li>
               </ul>
               <span class="work-link">Read the case study <span class="btn-arrow" aria-hidden="true">↗</span></span>
             </div>
           </a>
 
           <div class="work-grid">
-            <a href="html/imtexproject.html" class="work-card up-slider" data-accent="purple" data-preview="View case study">
-              <div class="work-media work-media-empty" role="img" aria-label="IMTEX 2025 WebVR showroom">
-                <span>IMTEX 2025 · WebVR</span>
+            <a href="html/amgmiotproject.html" class="work-card up-slider" data-accent="teal" data-preview="View case study">
+              <div class="work-media">
+                <img src="assets/project-images/mIoT-CNC/Banner.webp" alt="AMG-mIoT dashboard screens" class="work-img"
+                  loading="lazy" />
               </div>
               <div class="work-body">
                 <div class="work-meta">
                   <span class="work-index">02</span>
+                  <span class="work-role">Flagship · AceMicromatic MIT</span>
+                </div>
+                <h3 class="work-title">AMG-mIoT</h3>
+                <p class="work-desc">Live machine data in your pocket. Shop-floor KPIs, alerts and analytics for
+                  <strong>2,000+ industrial users</strong> on the App Store &amp; Play Store.</p>
+                <ul class="work-tags">
+                  <li>Flutter</li>
+                  <li>Blazor</li>
+                  <li>SignalR</li>
+                  <li>C#</li>
+                </ul>
+              </div>
+            </a>
+
+            <a href="html/imtexproject.html" class="work-card up-slider" data-accent="purple" data-preview="View case study">
+              <div class="work-media">
+                <img src="assets/project-images/WebVR/webvr-showroom-banner.webp" alt="IMTEX 2025 WebVR 3D showroom" class="work-img"
+                  loading="lazy" />
+              </div>
+              <div class="work-body">
+                <div class="work-meta">
+                  <span class="work-index">03</span>
                   <span class="work-role">WebVR · 2025</span>
                 </div>
                 <h3 class="work-title">IMTEX 2025 WebVR</h3>
@@ -178,51 +213,30 @@
               </div>
             </a>
 
-            <a href="html/danfossproject.html" class="work-card up-slider" data-accent="amber" data-preview="View case study">
+            <a href="html/o2dproject.html" class="work-card up-slider" data-accent="amber" data-preview="View case study">
               <div class="work-media">
-                <img src="assets/project-images/danfoss.png" alt="Assembly automation cockpit" class="work-img"
-                  loading="lazy" />
-              </div>
-              <div class="work-body">
-                <div class="work-meta">
-                  <span class="work-index">03</span>
-                  <span class="work-role">Industrial · 2024</span>
-                </div>
-                <h3 class="work-title">Assembly System</h3>
-                <p class="work-desc">A real-time process cockpit with stage interlocks — the line can't move forward
-                  until the torque checks out.</p>
-                <ul class="work-tags">
-                  <li>Blazor Server</li>
-                  <li>SignalR</li>
-                  <li>ASP.NET Core</li>
-                </ul>
-              </div>
-            </a>
-
-            <a href="html/qsureproject.html" class="work-card up-slider" data-accent="pink" data-preview="View case study">
-              <div class="work-media">
-                <img src="assets/project-images/qsure.png" alt="ACE QSure 360 inspection app" class="work-img"
+                <img src="assets/project-images/OM/o2d-platform.webp" alt="Order to Delivery logistics platform" class="work-img"
                   loading="lazy" />
               </div>
               <div class="work-body">
                 <div class="work-meta">
                   <span class="work-index">04</span>
-                  <span class="work-role">Mobile · 2024</span>
+                  <span class="work-role">Enterprise · 2024</span>
                 </div>
-                <h3 class="work-title">ACE QSure 360</h3>
-                <p class="work-desc">Paper QA checklists replaced with instant, automatically verified geometric
-                  tolerance checks.</p>
+                <h3 class="work-title">Order to Delivery</h3>
+                <p class="work-desc">From order creation to delivery in one platform — real-time SAP sync and
+                  role-based views that keep every stakeholder on the same page.</p>
                 <ul class="work-tags">
-                  <li>Flutter</li>
-                  <li>Dart</li>
-                  <li>Firebase</li>
+                  <li>Blazor</li>
+                  <li>C#</li>
+                  <li>SAP Integration</li>
                 </ul>
               </div>
             </a>
 
-            <a href="html/cdcproject.html" class="work-card up-slider" data-accent="blue" data-preview="View case study">
+            <a href="html/packingproject.html" class="work-card up-slider" data-accent="blue" data-preview="View case study">
               <div class="work-media">
-                <img src="assets/project-images/cdc.png" alt="Packing system handheld and portal" class="work-img"
+                <img src="assets/project-images/Packing/packing-handheld-portal.webp" alt="Packing system handheld and portal" class="work-img"
                   loading="lazy" />
               </div>
               <div class="work-body">
@@ -526,7 +540,7 @@
         </a>
         <div class="resume-div">
           <a class="resume-btn magnetic-button"
-            href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link"
+            href="assets/resume/Karthik V-Resume.pdf"
             target="_blank" rel="noopener">
             Résumé
           </a>
@@ -601,7 +615,7 @@
               <div class="text-footer-links-overline">More</div>
               <div class="footer-links-wrapper">
                 <a href="https://medium.com/@karthikv2910" target="_blank" rel="noopener" class="footer-link">Medium</a>
-                <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link"
+                <a href="assets/resume/Karthik V-Resume.pdf"
                   target="_blank" rel="noopener" class="footer-link">R&eacute;sum&eacute; <svg class="icon-external"
                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5">
@@ -625,20 +639,8 @@
 
   <div class="work-cursor" aria-hidden="true"><span></span></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
   <script src="script.js"></script>
-  <script>
-    document.querySelectorAll(".nav-toggle").forEach(function (el) {
-      el.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (this.getAttribute("aria-selected") === "true") return;
-        var goTo = this.getAttribute("href");
-        document.querySelector(".nav-indicator-pill").classList.add("info");
-        document.querySelector(".nav-indicator-glow").classList.add("info");
-        setTimeout(function () { window.location = goTo; }, 600);
-      });
-    });
-  </script>
 </body>
 
 </html>

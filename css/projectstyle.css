@@ -101,6 +101,11 @@ body {
   padding-top: 120px;
 }
 
+.section-banner.everything {
+  background: radial-gradient(circle farthest-side at 50% 0, rgba(18, 165, 136, 0.32), transparent);
+  padding-top: 120px;
+}
+
 .container-banner {
   z-index: 3;
   width: min(1148px, 92vw);
@@ -601,7 +606,8 @@ body {
 
   .section-banner.tpm,
   .section-banner.qa,
-  .section-banner.od {
+  .section-banner.od,
+  .section-banner.everything {
     padding-top: 96px;
   }
 
@@ -663,7 +669,8 @@ body {
 
   .section-banner.tpm,
   .section-banner.qa,
-  .section-banner.od {
+  .section-banner.od,
+  .section-banner.everything {
     padding-top: 88px;
   }
 

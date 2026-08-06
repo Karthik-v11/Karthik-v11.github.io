@@ -2,8 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Karthik - IMTEX 2025 WebVR</title>
+  <title>IMTEX 2025 WebVR — 3D Showroom by Karthik V</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta
+    content="A 30+ machine catalogue turned into a walkable 3D showroom that runs in any browser. Built with Next.js 14, React Three Fiber and GSAP, holding 30 fps on mid-range phones."
+    name="description">
+  <link rel="canonical" href="https://karthik-v11.github.io/html/imtexproject.html">
+  <meta content="IMTEX 2025 WebVR — 3D Showroom by Karthik V" property="og:title">
+  <meta
+    content="A 30+ machine catalogue turned into a walkable 3D showroom that runs in any browser. Built with Next.js 14, React Three Fiber and GSAP, holding 30 fps on mid-range phones."
+    property="og:description">
+  <meta content="https://karthik-v11.github.io/assets/project-images/WebVR/webvr-showroom-banner.webp" property="og:image">
+  <meta content="https://karthik-v11.github.io/html/imtexproject.html" property="og:url">
+  <meta content="Karthik V" property="og:site_name">
+  <meta content="en_US" property="og:locale">
+  <meta content="IMTEX 2025 WebVR — 3D Showroom by Karthik V" property="twitter:title">
+  <meta
+    content="A 30+ machine catalogue turned into a walkable 3D showroom that runs in any browser. Built with Next.js 14, React Three Fiber and GSAP, holding 30 fps on mid-range phones."
+    property="twitter:description">
+  <meta content="https://karthik-v11.github.io/assets/project-images/WebVR/webvr-showroom-banner.webp" property="twitter:image">
+  <meta content="@_Karthik_V_" name="twitter:site">
+  <meta property="og:type" content="article">
+  <meta content="summary_large_image" name="twitter:card">
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -82,7 +102,7 @@
               </div>
               <div class="text-projectcard-title">Medium</div>
             </a>
-            <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" class="link-chip-container">
+            <a href="../assets/resume/Karthik V-Resume.pdf" target="_blank" class="link-chip-container">
               <div style="margin-right: 1rem;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
                   <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755"/>
@@ -97,7 +117,7 @@
       <div class="nav-right-wrapper">
         <div class="chip-socials-wrapper anim-fade-in delay-2">
           <div class="text-socialnav link-pill" id="links-btn">Links</div>
-          <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" class="nav-resume-btn">Resume</a>
+          <a href="../assets/resume/Karthik V-Resume.pdf" target="_blank" class="nav-resume-btn">Resume</a>
         </div>
       </div>
     </div>
@@ -117,9 +137,7 @@
           <div class="text-projectpage-year anim-fade-in delay-3">AmiT / AceMicromatic MIT - Jan' 25</div>
         </div>
         <div class="project-banner-image-wrapper anim-slide-up delay-5">
-          <div class="image-project-banner" style="background: linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #1a0533 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; min-height: 300px; color: rgba(255,255,255,0.6); font-size: 1.2rem; text-align: center; padding: 2rem;">
-            <span>IMTEX 2025 WebVR — 3D Showroom Screenshot<br><span style="font-size:0.85rem;opacity:0.6;">Add a real screen capture here</span></span>
-          </div>
+          <img src="../assets/project-images/WebVR/webvr-showroom-banner.webp" loading="eager" alt="IMTEX 2025 WebVR 3D showroom" class="image-project-banner">
         </div>
       </div>
     </div>
@@ -134,18 +152,17 @@
 
     <section id="imtex-overview" class="section-overview fade-up">
       <div class="overview-text-wrapper">
-        <div>30+ machine models, one browser, stable 30 fps.</div>
+        <div>Making a 3D catalogue run smoothly on a mid-range phone.</div>
         <div class="text-projectpage-body">
-          The problem was delivering a walkable 3D showroom — 30+ detailed machine models, each with interactive spec panels — that runs smoothly in a browser on mid-range phones and laptops. I built the <b>IMTEX 2025 WebVR</b> experience on <b>Next.js 14</b> and <b>React Three Fiber (R3F)</b>.
+          <b>Context:</b> AmiT / AceMicromatic MIT needed its 30+ machine catalogue to outlive a physical trade-show booth. Before this, prospects only saw static spec sheets — there was no way to walk around a machine at 1:1 scale or pull its brochure without a salesperson on site.
           <br><br>
-          I engineered a GSAP-driven navigation system for moving through the virtual showroom and interacting with 1:1 scale machine models. Each station includes technical specs, PDF brochures, and image galleries — bridging physical hardware and digital exploration. The core challenge was 3D performance: I managed draw-call batching, GLB compression via Draco, and LOD (level-of-detail) switching so a 50 MB model catalog loads and renders on a 3-year-old phone.
+          <b>My role:</b> I owned the entire implementation — 3D scene assembly, performance optimization, Next.js routing, and GSAP interactions — while a 3D artist created the GLB machine models and textures.
           <br><br>
-          <b>Why Next.js/R3F over a lighter stack:</b> For a pure 3D showroom, a simpler Three.js app would have been lighter. But the project needed dynamic routing for 30+ machine detail pages, SSR for SEO, and a CMS-backed spec database — Next.js gave us all of that with R3F as a first-class citizen. The trade-off is a heavier initial bundle (~2.5 MB gzip) mitigated by route-based code splitting and dynamic model loading.
+          <b>Approach:</b> I built the <b>IMTEX 2025 WebVR</b> experience on <b>Next.js 14</b> and <b>React Three Fiber (R3F)</b>. I engineered a GSAP-driven navigation system for moving through the virtual showroom and interacting with 1:1 scale machine models. Each station includes technical specs, PDF brochures, and image galleries. The core challenge was 3D performance on a 50 MB model catalog: I used draw-call batching, GLB compression via Draco, texture compression, and LOD (level-of-detail) switching so machines swap to lower-detail versions past a distance — keeping a 3-year-old phone rendering at stable 30 fps.
           <br><br>
-          I owned the entire implementation — 3D scene assembly, performance optimization, Next.js routing, and GSAP interactions — while a 3D artist created the GLB machine models and textures.
+          <b>Key decision — fidelity vs. mobile performance:</b> The showroom had to run on phones, not just demo hardware, so I optimized for a playable frame rate over maximum polygon fidelity: a machine looks photo-real up close, then fades to a lighter LOD as you step back. The trade-off is that the highest-detail model can't run on the cheapest device — but the experience never drops below a usable frame rate. I also chose Next.js over a leaner Three.js app because the project needed dynamic routing for 30+ machine detail pages, SSR for SEO, and a CMS-backed spec database — at the cost of a heavier initial bundle (~2.5 MB gzip), mitigated by route-based code splitting and dynamic model loading.
           <br><br>
-          The result transformed a physical exhibition booth into a persistent, global sales tool that lives on long after the event.
-        </div>
+          <b>Impact:</b> <b>30+ machine models</b>, each with spec panels and PDF brochures, running at a stable 30 fps in any browser on mid-range phones and laptops — turning a physical exhibition booth into a persistent, global sales tool.</div>
       </div>
 
       <div class="overview-text-wrapper">
@@ -174,9 +191,7 @@
           </div>
           <div class="moneyshots-content">
             <div class="media-caption-wrapper">
-              <div style="background: linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #1a0533 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; min-height: 220px; color: rgba(255,255,255,0.5); text-align: center; padding: 2rem;" class="image-default highlight-outline" role="img" aria-label="IMTEX 2025 WebVR showroom view">
-                <span>Showroom View<br><span style="font-size:0.8rem;opacity:0.5;">Replace with screenshot</span></span>
-              </div>
+              <img src="../assets/project-images/WebVR/webvr-showroom-view.webp" loading="lazy" alt="IMTEX 2025 WebVR showroom view" class="image-default highlight-outline">
               <div class="caption-wrapper">
                 <div class="text-image-caption"><span class="text-figure-caption">0.1</span> Showroom View</div>
                 <div class="chip-medium-type">
@@ -185,9 +200,7 @@
               </div>
             </div>
             <div class="media-caption-wrapper">
-              <div style="background: linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #1a0533 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; min-height: 220px; color: rgba(255,255,255,0.5); text-align: center; padding: 2rem;" class="image-default highlight-outline" role="img" aria-label="IMTEX 2025 WebVR machine interaction">
-                <span>Machine Interaction<br><span style="font-size:0.8rem;opacity:0.5;">Replace with screenshot</span></span>
-              </div>
+              <img src="../assets/project-images/WebVR/webvr-machine-interaction.webp" loading="lazy" alt="IMTEX 2025 WebVR machine interaction" class="image-default highlight-outline">
               <div class="caption-wrapper">
                 <div class="text-image-caption"><span class="text-figure-caption">0.2</span> Machine Interaction</div>
                 <div class="chip-medium-type">
@@ -233,7 +246,7 @@
             <div class="text-footer-links-overline">More</div>
             <div class="footer-links-wrapper">
               <a href="https://medium.com/@karthikv2910" target="_blank" rel="noopener" class="footer-link">Medium</a>
-              <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" rel="noopener" class="footer-link">R&eacute;sum&eacute; <svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10" /></svg></a>
+              <a href="../assets/resume/Karthik V-Resume.pdf" target="_blank" rel="noopener" class="footer-link">R&eacute;sum&eacute; <svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10" /></svg></a>
             </div>
           </div>
         </div>

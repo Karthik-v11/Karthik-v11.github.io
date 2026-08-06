@@ -8,16 +8,21 @@
   <meta
     content="About Karthik V — a software engineer in Bengaluru building mobile apps, real-time dashboards, and 3D web."
     name="description">
+  <link rel="canonical" href="https://karthik-v11.github.io/html/info.html">
   <meta content="Info — Karthik V" property="og:title">
   <meta
     content="About Karthik V — a software engineer in Bengaluru building mobile apps, real-time dashboards, and 3D web."
     property="og:description">
-  <meta content="../assets/logo.webp" property="og:image">
+  <meta content="https://karthik-v11.github.io/assets/profileImage.webp" property="og:image">
+  <meta content="https://karthik-v11.github.io/html/info.html" property="og:url">
+  <meta content="Karthik V" property="og:site_name">
+  <meta content="en_US" property="og:locale">
   <meta content="Info — Karthik V" property="twitter:title">
   <meta
     content="About Karthik V — a software engineer in Bengaluru building mobile apps, real-time dashboards, and 3D web."
     property="twitter:description">
-  <meta content="../assets/logo.webp" property="twitter:image">
+  <meta content="https://karthik-v11.github.io/assets/profileImage.webp" property="twitter:image">
+  <meta content="@_Karthik_V_" name="twitter:site">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
@@ -27,6 +32,12 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900%7CJetBrains+Mono:100,200,300,regular,500,600,700,800%7CGloock:regular%7CPlayfair+Display:500italic,600italic,700italic"
     media="all">
+  <noscript>
+    <style>
+      .loading-overlay { display: none !important; }
+      main { opacity: 1 !important; }
+    </style>
+  </noscript>
 
 </head>
 
@@ -59,7 +70,7 @@
       <div class="nav-right-wrapper">
         <div class="chip-socials-wrapper">
           <a href="#contact" class="nav-text-link">Contact</a>
-          <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link"
+          <a href="../assets/resume/Karthik V-Resume.pdf"
             target="_blank" rel="noopener" class="nav-resume-btn">Résumé</a>
         </div>
         <button class="hamburger" aria-label="Toggle menu">
@@ -76,7 +87,7 @@
       <a href="../index.html" class="mobile-nav-link">Work</a>
       <a href="info.html" class="mobile-nav-link">Info</a>
       <a href="#contact" class="mobile-nav-link">Contact</a>
-      <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" rel="noopener" class="mobile-nav-link">Résumé</a>
+      <a href="../assets/resume/Karthik V-Resume.pdf" target="_blank" rel="noopener" class="mobile-nav-link">Résumé</a>
     </div>
   </div>
 
@@ -203,7 +214,7 @@
         </a>
         <div class="resume-div">
           <a class="resume-btn magnetic-button"
-            href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link"
+            href="../assets/resume/Karthik V-Resume.pdf"
             target="_blank" rel="noopener">
             Résumé
           </a>
@@ -278,7 +289,7 @@
               <div class="text-footer-links-overline">More</div>
               <div class="footer-links-wrapper">
                 <a href="https://medium.com/@karthikv2910" target="_blank" rel="noopener" class="footer-link">Medium</a>
-                <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link"
+                <a href="../assets/resume/Karthik V-Resume.pdf"
                   target="_blank" rel="noopener" class="footer-link">R&eacute;sum&eacute; <svg class="icon-external"
                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5">
@@ -301,18 +312,6 @@
   </main>
 
   <script src="../script.js"></script>
-  <script>
-    document.querySelectorAll(".nav-toggle").forEach(function (el) {
-      el.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (this.getAttribute("aria-selected") === "true") return;
-        var goTo = this.getAttribute("href");
-        document.querySelector(".nav-indicator-pill").classList.remove("info");
-        document.querySelector(".nav-indicator-glow").classList.add("info-pill-change");
-        setTimeout(function () { window.location = goTo; }, 600);
-      });
-    });
-  </script>
 </body>
 
 </html>

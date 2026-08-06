@@ -431,16 +431,26 @@ window.addEventListener('keydown', (e) => {
   });
 })();
 
-// Animates the nav indicator on tab switch and sets the current year in the footer
+// Animates the nav indicator on tab switch, then navigates
 document.querySelectorAll(".nav-toggle").forEach(function (el) {
   el.addEventListener("click", function (e) {
     var goTo = this.getAttribute("href");
-    if (goTo !== "/index.html") {
-      e.preventDefault();
-      document.querySelector(".nav-indicator-pill").classList.add("work");
-      document.querySelector(".nav-indicator-glow").classList.add("pill-change");
-      setTimeout(function () { window.location = goTo; }, 600);
+    var isCurrent = this.getAttribute("aria-selected") === "true";
+    var pill = document.querySelector(".nav-indicator-pill");
+    var glow = document.querySelector(".nav-indicator-glow");
+    if (!pill || !glow) return;
+
+    e.preventDefault();
+    if (isCurrent) return;
+
+    if (/(^|\/)index\.html$/.test(goTo)) {
+      pill.classList.remove("info");
+      glow.classList.add("info-pill-change");
+    } else {
+      pill.classList.add("info");
+      glow.classList.add("info");
     }
+    setTimeout(function () { window.location = goTo; }, 600);
   });
 });
 document.getElementById("footer-year").textContent = new Date().getFullYear();

@@ -2,8 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Karthik - AMG-mIoT</title>
+  <title>AMG-mIoT — Industrial IoT App by Karthik V</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta
+    content="AMG-mIoT puts live machine data in your pocket — shop-floor KPIs, alerts and analytics for 2,000+ industrial users. Flutter, Blazor and SignalR real-time architecture."
+    name="description">
+  <link rel="canonical" href="https://karthik-v11.github.io/html/amgmiotproject.html">
+  <meta content="AMG-mIoT — Industrial IoT App by Karthik V" property="og:title">
+  <meta
+    content="AMG-mIoT puts live machine data in your pocket — shop-floor KPIs, alerts and analytics for 2,000+ industrial users. Flutter, Blazor and SignalR real-time architecture."
+    property="og:description">
+  <meta content="https://karthik-v11.github.io/assets/project-images/mIoT-CNC/Banner.webp" property="og:image">
+  <meta content="https://karthik-v11.github.io/html/amgmiotproject.html" property="og:url">
+  <meta content="Karthik V" property="og:site_name">
+  <meta content="en_US" property="og:locale">
+  <meta content="AMG-mIoT — Industrial IoT App by Karthik V" property="twitter:title">
+  <meta
+    content="AMG-mIoT puts live machine data in your pocket — shop-floor KPIs, alerts and analytics for 2,000+ industrial users. Flutter, Blazor and SignalR real-time architecture."
+    property="twitter:description">
+  <meta content="https://karthik-v11.github.io/assets/project-images/mIoT-CNC/Banner.webp" property="twitter:image">
+  <meta content="@_Karthik_V_" name="twitter:site">
+  <meta property="og:type" content="article">
+  <meta content="summary_large_image" name="twitter:card">
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -82,7 +102,7 @@
               </div>
               <div class="text-projectcard-title">Medium</div>
             </a>
-            <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" class="link-chip-container">
+            <a href="../assets/resume/Karthik V-Resume.pdf" target="_blank" class="link-chip-container">
               <div style="margin-right: 1rem;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
                   <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755"/>
@@ -97,7 +117,7 @@
       <div class="nav-right-wrapper">
         <div class="chip-socials-wrapper anim-fade-in delay-2">
           <div class="text-socialnav link-pill" id="links-btn">Links</div>
-          <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" class="nav-resume-btn">Resume</a>
+          <a href="../assets/resume/Karthik V-Resume.pdf" target="_blank" class="nav-resume-btn">Resume</a>
         </div>
       </div>
     </div>
@@ -133,7 +153,7 @@
           </div>
         <div
           class="project-banner-image-wrapper anim-slide-up delay-5"><img
-            src="../assets/project-images/amgmiot.webp"
+            src="../assets/project-images/mIoT-CNC/amg-miot-showcase.webp"
             loading="eager" alt="AMG-mIoT dashboard across devices"  class="image-project-banner"></div>
 
       </div>
@@ -150,17 +170,19 @@
 
     <section id="amgmiot-overview" class="section-overview fade-up">
         <div class="overview-text-wrapper">
-          <div >Overview</div>
+          <div>Keeping a live dashboard honest when data never stops moving.</div>
           <div class="text-projectpage-body">
-            <b>Challenge:</b> AceMicromatic's shop floors generate high-frequency machine data — spindle load, temperature, cycle counts, alarms — from hundreds of machines per plant. The existing web dashboard polled a REST endpoint every 5 seconds, which meant stale data, unnecessary bandwidth, and no mobile experience at all. Operators on the move had no way to monitor KPIs or respond to alerts until they returned to a desk.
+            <b>Context:</b> AceMicromatic's shop floors generate high-frequency machine data — spindle load, temperature, cycle counts, alarms — from hundreds of machines per plant. The existing web dashboard polled a REST endpoint every 5 seconds: stale data, wasted bandwidth, and no mobile experience at all. Operators on the move had no way to monitor KPIs or respond to alerts until they returned to a desk.
             <br><br>
-            <b>Approach:</b> I architected the Flutter mobile client around <b>SignalR persistent connections</b> multiplexed by plant and machine group, so real-time KPI tiles and alert streams update without polling. On the Blazor dashboard side, I designed the state flow to batch UI updates on a configurable interval — decoupling render cycles from wire events so the interface stays responsive even when hundreds of machines broadcast status changes per second. I also implemented a local cache layer with exponential-backoff reconnection so the app never shows a blank screen on intermittent networks.
+            <b>My role:</b> I owned the mobile client end-to-end — architecture, state management, SignalR integration, offline resilience, and App Store / Play Store releases — while a backend team maintained the SignalR hubs and SQL Service Broker triggers on the server side.
+            <br><br>
+            <b>Approach:</b> I architected the Flutter mobile client around <b>SignalR persistent connections</b> multiplexed by plant and machine group, so real-time KPI tiles and alert streams update without polling. On the Blazor dashboard side, I designed the state flow to batch UI updates on a configurable interval — decoupling render cycles from wire events so the interface stays responsive even when hundreds of machines broadcast status changes per second. The redesign replaced a dense desktop-first KPI grid with a mobile-first dashboard: the critical KPIs — spindle load, temperature, cycle counts — surface as live tiles with a separate alert stream, so a phone can be read at a glance. I also implemented a local cache layer with exponential-backoff reconnection so the app never shows a blank screen on intermittent networks.
             <br><br>
             <b>Key decision — SignalR over polling:</b> Moving from 5-second REST polling to WebSocket-backed SignalR cut latency from ~5 s to &lt;200 ms and reduced bandwidth by roughly 60% on the critical data path. The trade-off was more complex reconnection logic — I implemented exponential backoff with jitter and a local cache so the mobile app stays usable during signal drops. The data refresh rate on critical KPI tiles is ~100 ms over the WebSocket path, with non-critical data batched to a 2-second interval.
             <br><br>
-            <b>Impact:</b> The app serves <b>2,000+ industrial users</b> across iOS and Android, with six major updates shipped through the full release pipeline — TestFlight beta distribution, phased rollouts, and Firebase crash monitoring. Push notifications (FCM/APNs) deliver downtime alerts and KPI threshold breaches with context-deep links so a tap opens the relevant machine detail view.
+            <b>Why push notifications:</b> Downtime alerts and KPI threshold breaches arrive as native push (FCM/APNs) rather than in-app polling — an operator's phone can't keep a polling loop alive without draining the battery or missing alerts entirely. Each notification carries a context-deep link so a tap opens the exact machine detail view.
             <br><br>
-            I owned the mobile client end-to-end — architecture, state management, SignalR integration, offline resilience, and App Store / Play Store releases — while a backend team maintained the SignalR hubs and SQL Service Broker triggers on the server side.</div>
+            <b>Impact:</b> The app serves <b>2,000+ industrial users</b> across iOS and Android, with six major updates shipped through the full release pipeline — TestFlight beta distribution, phased rollouts, and Firebase crash monitoring.</div>
         </div>
 
         <div class="overview-text-wrapper">
@@ -189,7 +211,7 @@
           </div>
           <div class="moneyshots-content">
             <div class="media-caption-wrapper"><img
-                src="../assets/project-images/tpm1.webp"
+                src="../assets/project-images/mIoT-CNC/Banner.webp"
                 loading="lazy"
                 alt="AMG-mIoT before and after comparison" class="image-default highlight-outline">
               <div class="caption-wrapper">
@@ -200,7 +222,7 @@
               </div>
             </div>
             <div class="media-caption-wrapper"><img
-                src="../assets/project-images/tpm2.webp"
+                src="../assets/project-images/mIoT-CNC/amg-miot-kpi.webp"
                 loading="lazy"
                 alt="AMG-mIoT mobile screens" class="image-default highlight-outline">
               <div class="caption-wrapper">
@@ -248,7 +270,7 @@
               <div class="text-footer-links-overline">More</div>
               <div class="footer-links-wrapper">
                 <a href="https://medium.com/@karthikv2910" target="_blank" rel="noopener" class="footer-link">Medium</a>
-                <a href="https://drive.google.com/file/d/1k9JIU2I_8mqB5ITDH2TJcJ6_nu2hpuV4/view?usp=drive_link" target="_blank" rel="noopener" class="footer-link">R&eacute;sum&eacute; <svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10" /></svg></a>
+                <a href="../assets/resume/Karthik V-Resume.pdf" target="_blank" rel="noopener" class="footer-link">R&eacute;sum&eacute; <svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10" /></svg></a>
               </div>
             </div>
           </div>
