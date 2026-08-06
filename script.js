@@ -22,6 +22,36 @@ const animateOnScroll = (selector, animateClass, staggerBase = 0.12) => {
 
 animateOnScroll(".up-slider", "slide-up", 0.12)
 
+// Reveals fade-in / fade-up elements as they scroll into view (project pages)
+const projectFadeEls = document.querySelectorAll(".fade-up, .fade-in")
+if (projectFadeEls.length) {
+  const projectObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible")
+        obs.unobserve(entry.target)
+      }
+    })
+  }, observerOptions)
+  projectFadeEls.forEach((el) => projectObserver.observe(el))
+}
+
+// Highlights the active section in the project-page timeline sidebar
+const timelineItems = document.querySelectorAll(".timeline-item")
+const timelineSections = document.querySelectorAll(".section-overview, .section-highlights")
+if (timelineItems.length && timelineSections.length) {
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        timelineItems.forEach((item) => {
+          item.classList.toggle("active", item.getAttribute("href") === "#" + entry.target.id)
+        })
+      }
+    })
+  }, { threshold: 0.3 })
+  timelineSections.forEach((s) => timelineObserver.observe(s))
+}
+
 // Toggles the links overlay panel on project pages
 const linksBtn = document.getElementById("links-btn")
 const linksOverlay = document.getElementsByClassName("links-overlay")[0]
@@ -454,3 +484,35 @@ document.querySelectorAll(".nav-toggle").forEach(function (el) {
   });
 });
 document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+// Preserves home-page scroll position when returning from a project page
+(function () {
+  var homeCards = document.querySelectorAll('.work-card[data-preview]');
+  if (!homeCards.length) return;
+  var key = 'portfolio-scroll';
+
+  homeCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      sessionStorage.setItem(key, window.scrollY);
+    });
+  });
+
+  var saved = sessionStorage.getItem(key);
+  if (saved === null) return;
+  sessionStorage.removeItem(key);
+
+  var target = parseInt(saved, 10);
+  if (isNaN(target) || target <= 0) return;
+
+  var restore = function () {
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, target);
+    document.documentElement.style.scrollBehavior = '';
+  };
+
+  if (document.readyState === 'complete') {
+    setTimeout(restore, 300);
+  } else {
+    window.addEventListener('load', function () { setTimeout(restore, 300); });
+  }
+})();

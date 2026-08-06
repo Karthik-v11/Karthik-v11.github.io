@@ -363,6 +363,7 @@ body,
 /* Links button */
 .chip-socials-wrapper {
   display: flex;
+  flex-wrap: wrap;
   grid-column-gap: 8px;
   align-items: center;
 }
@@ -453,6 +454,7 @@ body,
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 1rem;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -746,9 +748,7 @@ body,
     opacity: 1 !important;
     transform: none !important;
   }
-  .slide-up,
-  .slide-right,
-  .slide-left {
+  .slide-up {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -971,28 +971,6 @@ body,
   }
 }
 
-@keyframes slide-right {
-  0% {
-    opacity: 0;
-    transform: translateX(-60px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-@keyframes slide-left {
-  0% {
-    opacity: 0;
-    transform: translateX(60px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
 /* Page load fade-in */
 @keyframes fadeInUp {
   0% {
@@ -1063,16 +1041,6 @@ main.reveal {
 .slide-up {
   opacity: 1 !important;
   animation: 0.8s cubic-bezier(0.22, 1, 0.36, 1) slide-up;
-  will-change: transform;
-}
-
-.slide-right {
-  animation: 0.8s cubic-bezier(0.22, 1, 0.36, 1) slide-right;
-  will-change: transform;
-}
-
-.slide-left {
-  animation: 0.8s cubic-bezier(0.22, 1, 0.36, 1) slide-left;
   will-change: transform;
 }
 
@@ -1650,31 +1618,6 @@ main.reveal {
   aspect-ratio: 16 / 9;
 }
 
-/* placeholder when a project has no screenshot yet */
-.home .work-media-empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(140deg, rgba(18, 165, 136, 0.1), transparent 55%),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 44px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 44px),
-    #0c0c0c;
-}
-
-.home .work-media-empty span {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  transition: color 0.5s ease;
-}
-
-.home .work-card:hover .work-media-empty span {
-  color: var(--text-body);
-}
-
 .home .work-footnote {
   margin-top: clamp(32px, 3.5vw, 48px);
   display: flex;
@@ -1761,13 +1704,6 @@ main.reveal {
   font-size: 0.95rem;
   line-height: 1.65;
   color: var(--text-body);
-}
-
-/* --- stack + interests ------------------------------------------------- */
-.home .split {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(36px, 5vw, 88px);
 }
 
 /* --- skills reel (stop-motion carousel) --------------------------------- */
@@ -1940,25 +1876,6 @@ main.reveal {
   }
 }
 
-.home .interest-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.home .interest-list li {
-  padding: 13px 0;
-  border-bottom: 1px solid var(--rule);
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
-  line-height: 1.5;
-  color: var(--text-body);
-  transition: color 0.35s ease;
-}
-
-.home .interest-list li:hover {
-  color: var(--on-background);
-}
-
 /* --- about / experience ------------------------------------------------ */
 .home .timeline {
   border-top: 1px solid var(--rule);
@@ -2067,30 +1984,6 @@ main.reveal {
   font-size: clamp(1rem, 1.2vw, 1.15rem);
 }
 
-.home .contact-email {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
-  margin: 28px auto 0;
-  font-size: clamp(1.1rem, 2.2vw, 1.9rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--on-background);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 8px;
-  transition: color 0.4s ease, border-color 0.4s ease;
-  word-break: break-word;
-}
-
-.home .contact-email:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-.home .contact-email:hover .btn-arrow {
-  transform: translate(4px, -4px);
-}
-
 .home .contact .resume-div {
   padding: 24px 0 28px;
 }
@@ -2154,7 +2047,6 @@ main.reveal {
 
 @media screen and (max-width: 860px) {
   .home .work-grid,
-  .home .split,
   .home .currently-list {
     grid-template-columns: minmax(0, 1fr);
   }

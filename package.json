@@ -1,0 +1,13 @@
+{
+  "name": "karthik-v11.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio site for Karthik V — static HTML/CSS/JS on GitHub Pages.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "terser": "^5.49.2"
+  }
+}

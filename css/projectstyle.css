@@ -87,17 +87,22 @@ body {
 }
 
 .section-banner.tpm {
-  background: radial-gradient(circle farthest-side at 50% 0, rgba(0, 106, 195, 0.4), transparent);
+  background: radial-gradient(circle farthest-side at 50% 0, rgba(18, 165, 136, 0.4), transparent);
   padding-top: 120px;
 }
 
-.section-banner.qa {
-  background: radial-gradient(circle farthest-side at 50% 0, rgba(235, 82, 51, 0.35), transparent);
+.section-banner.imtex {
+  background: radial-gradient(circle farthest-side at 50% 0, rgba(139, 92, 246, 0.35), transparent);
+  padding-top: 120px;
+}
+
+.section-banner.packing {
+  background: radial-gradient(circle farthest-side at 50% 0, rgba(59, 130, 246, 0.4), transparent);
   padding-top: 120px;
 }
 
 .section-banner.od {
-  background: radial-gradient(circle farthest-side at 50% 0, rgba(49, 49, 49, 0.5), transparent);
+  background: radial-gradient(circle farthest-side at 50% 0, rgba(245, 158, 11, 0.35), transparent);
   padding-top: 120px;
 }
 
@@ -416,36 +421,6 @@ body {
   line-height: 14px;
 }
 
-/* === SKILL PILLS === */
-.chip-socials-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-
-.link-pill {
-  height: 36px;
-  min-width: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.link-pill:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
 /* === CONTACT LINKS (in banner) === */
 .contact-links {
   display: flex;
@@ -474,6 +449,35 @@ body {
   transform: translateY(-6px) scale(1.05);
   border-color: rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.06);
+}
+
+/* === STORE BADGES (in banner) === */
+.store-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  color: var(--on-background);
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease,
+              background 0.3s ease;
+  will-change: transform;
+}
+
+.store-pill:hover {
+  transform: translateY(-6px) scale(1.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.store-pill svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
 }
 
 /* === INITIAL LOAD ANIMATIONS === */
@@ -605,7 +609,8 @@ body {
   }
 
   .section-banner.tpm,
-  .section-banner.qa,
+  .section-banner.imtex,
+  .section-banner.packing,
   .section-banner.od,
   .section-banner.everything {
     padding-top: 96px;
@@ -668,7 +673,8 @@ body {
   }
 
   .section-banner.tpm,
-  .section-banner.qa,
+  .section-banner.imtex,
+  .section-banner.packing,
   .section-banner.od,
   .section-banner.everything {
     padding-top: 88px;
@@ -692,12 +698,6 @@ body {
 
   .image-project-banner {
     width: 100%;
-  }
-
-  .link-pill {
-    height: 32px;
-    padding: 0 12px;
-    font-size: 11px;
   }
 
   .project-layout {
