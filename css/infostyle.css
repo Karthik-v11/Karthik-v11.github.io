@@ -259,6 +259,7 @@ main.reveal {
 .window-content {
   z-index: 5;
   display: flex;
+  padding: 0;
   flex-direction: column;
   justify-content: center;
   position: relative;
