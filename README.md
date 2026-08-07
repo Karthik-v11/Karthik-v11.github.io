@@ -1,6 +1,6 @@
 # Karthik-v11.github.io
 
-Personal portfolio for **Karthik V** — Software Engineer building mobile apps, real-time systems, and 3D web. Live at https://karthik-v11.github.io/.
+Personal portfolio for **Karthik V** — Software Engineer building mobile apps, real-time systems, and 3D web. Live at https://karthik-v11.github.io/. 
 
 ## Structure
 
